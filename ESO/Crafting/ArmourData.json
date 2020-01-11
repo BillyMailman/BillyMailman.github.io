@@ -1,0 +1,38 @@
+{
+  "Armours" : [
+    {"name":"Cuirass","type":"heavy",    "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Sabatons","type":"heavy",   "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Gauntlets","type":"heavy",  "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Helm","type":"heavy",       "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Greaves","type":"heavy",    "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Pauldron","type":"heavy",   "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Girdle","type":"heavy",     "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Jack","type":"medium",      "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Boots","type":"medium",     "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Bracers","type":"medium",   "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Helmet","type":"medium",    "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Guards","type":"medium",    "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Arm Cops","type":"medium",  "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Belt","type":"medium",      "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Robe","type":"light",       "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Shoe","type":"light",       "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Gloves","type":"light",     "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Hat","type":"light",        "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Breeches","type":"light",   "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Epaulets","type":"light",   "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Sash","type":"light",       "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES" ]},
+    {"name":"Shield","type":"other",     "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]}
+
+  ],
+  "Traits":[
+    {"name":"Sturdy","material":"Quartz"},
+    {"name":"Impenetrable","material":"Diamond"},
+    {"name":"Reinforced","material":"Sardonyx"},
+    {"name":"Well-Fitted","material":"Alamandine"},
+    {"name":"Training","material":"Emerald"},
+    {"name":"Infused","material":"Bloodstone"},
+    {"name":"Exploration","material":"Garnet"},
+    {"name":"Divines","material":"Sapphire"},
+    {"name":"Nirnhoned","material":"Fortified Nirncrux"}
+  ]
+}

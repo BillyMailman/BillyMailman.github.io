@@ -1,0 +1,27 @@
+{
+  "Weapons" : [
+    {"name":"Axe","type":"blacksmithing",             "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Hammer","type":"blacksmithing",          "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Sword","type":"blacksmithing",           "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Battle Axe","type":"blacksmithing",      "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Maul","type":"blacksmithing",            "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Greatsword","type":"blacksmithing",      "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Dagger","type":"blacksmithing",          "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Bow","type":"woodworking",               "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Fire Staff","type":"woodworking",        "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Lightning Staff","type":"woodworking",   "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Ice Staff","type":"woodworking",         "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]},
+    {"name":"Restoration Staff","type":"woodworking", "Data": ["YES","YES","YES","YES","YES","YES","YES","YES","YES"]}
+  ],
+  "Traits":[
+    {"name":"Powered","material":"Chysolite"},
+    {"name":"Charged","material":"Amethyst"},
+    {"name":"Precise","material":"Ruby"},
+    {"name":"Infused","material":"Jade"},
+    {"name":"Defending","material":"Turqoise"},
+    {"name":"Training","material":"Carnelian"},
+    {"name":"Sharpened","material":"Fire Opal"},
+    {"name":"Weighted","material":"Citrine"},
+    {"name":"Nirnhoned","material":"Potent Nirncrux"}
+  ]
+}

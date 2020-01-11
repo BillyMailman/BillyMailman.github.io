@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My ESO Crafting Stats</title>
+	<link rel="stylesheet" href="Crafting.css"/>
+	<script type="text/javascript" src="/ESO/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.4.0/jquery.floatThead.min.js"></script>
+	<script type="text/javascript">
+
+	function buildArmourTable(data){
+		var header = $('#armour-table>thead');
+		var headerRow = $('<tr><td>Armour Type</td>');
+		//Header row with traits.
+		data.Traits.forEach(function(Trait){
+			var td = $('<td>')
+			td.append('<img src="Crafting/' + Trait.material + '.png"></img><br/>' + Trait.name + '<br/>(' + Trait.material + ')');
+			headerRow.append(td);
+		});
+		header.append(headerRow);
+
+		//Each Armour Type
+		var tbody = $('#armour-table>tbody');
+		["Heavy","Medium","Light","Other"].forEach(function(ArmourType){
+			var classHeader = $('<tr>');
+			classHeader.append('<td class="section-header" colspan="10">' + ArmourType + ' Armour</td>');
+			tbody.append(classHeader);
+
+			//Each Armour
+			data.Armours.filter(function(Armour){return Armour.type.toLowerCase() === ArmourType.toLowerCase()}).forEach(function(Armour){
+				var ArmourRow = $('<tr>');
+				ArmourRow.append('<td>' + Armour.name + '</td>');
+				//Each status for this Armour
+				Armour.Data.forEach(function(status){
+					var td = $('<td class="status-' + status + '">')
+					td.append(status);
+					ArmourRow.append(td);
+				});
+				tbody.append(ArmourRow);
+			});
+		});
+	}
+
+	function buildWeaponTable(data){
+		var header = $('#weapon-table>thead');
+		var headerRow = $('<tr><td>Weapon Type</td>');
+		//Header row with traits.
+		data.Traits.forEach(function(Trait){
+			var td = $('<td>')
+			td.append('<img src="Crafting/' + Trait.material + '.png"></img><br/>' + Trait.name + '<br/>(' + Trait.material + ')');
+			headerRow.append(td);
+		});
+		header.append(headerRow);
+
+		//Each Weapon Type
+		var tbody = $('#weapon-table>tbody');
+		["Blacksmithing","Woodworking"].forEach(function(WeaponType){
+			var classHeader = $('<tr>');
+			classHeader.append('<td class="section-header" colspan="10">' + WeaponType + ' Weapon</td>');
+			tbody.append(classHeader);
+
+			//Each Weapon
+			data.Weapons.filter(function(Weapon){return Weapon.type.toLowerCase() === WeaponType.toLowerCase()}).forEach(function(Weapon){
+				var WeaponRow = $('<tr>');
+				WeaponRow.append('<td>' + Weapon.name + '</td>');
+				//Each status for this Weapon
+				Weapon.Data.forEach(function(status){
+					var td = $('<td class="status-' + status + '">')
+					td.append(status);
+					WeaponRow.append(td);
+				});
+				tbody.append(WeaponRow);
+			});
+		});
+	}
+
+	function buildStyleTable(data){
+		var header = $('#style-table>thead');
+		var headerRow = $('<tr><td>Style</td>');
+		//Header Row lists pages.
+		var PageNum = 0;
+		data.Pages.forEach(function(Page){
+			var td = $('<td>')
+			PageNum++;
+			td.append('Page ' + PageNum + '<br/>' + Page);
+			headerRow.append(td);
+		});
+		headerRow.append($('<td>Total</td>'))
+		header.append(headerRow);
+
+		//Each Style
+		var tbody = $('#style-table>tbody');
+		data.Styles.forEach(function(style){
+			var totalYes = 0;
+			var styleRow = $('<tr class="style-' + style.type + '">');
+			var methodData = data.Methods[style.name];
+			if(methodData !== undefined){
+				var itemMethod = methodData.Item;
+				var motifMethod = methodData.Motif
+				var tooltip = "Motif: " + motifMethod + "\nStyle Item: " + itemMethod;
+				styleRow.attr('title',tooltip);
+			}
+			var nameTd = $('<td>');
+			nameTd.append('<span class="style-number">(' + style.number + ')</span>' + ' ' + style.name + '<br/><img src="Crafting/' + style.material + '.png"> ' + style.material)
+			styleRow.append(nameTd); //'<td><img src="Crafting/' + style.material + '.png">' + style.name + '<br/>(' + style.material + ')');
+			style.Data.forEach(function(status){
+				if(status === 'YES'){
+					totalYes += 1;
+				}
+				var td = $('<td class="status-' + status + '">')
+				td.append(status);
+				styleRow.append(td);
+			});
+			var totalElement = $('<td class="total total-' + totalYes + '">');
+			totalElement.append(totalYes);
+			styleRow.append(totalElement);
+			tbody.append(styleRow);
+		});
+		var styleTable = $('#style-table');
+		styleTable.floatThead();
+	}
+
+
+	function buildAllData(){
+			$.getJSON('Crafting/ArmourData.json').done(buildArmourTable);
+			$.getJSON('Crafting/WeaponData.json').done(buildWeaponTable);
+			$.getJSON('Crafting/StyleData.json').done(buildStyleTable);
+	}
+	$(document).ready(buildAllData);
+	</script>
+</head>
+<body>
+	<h1>My ESO Crafting Stats</h1>
+	<div id="armour-section">
+		<h3>Armour Traits</h3>
+		<table id="armour-table">
+			<thead>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<div id="weapon-section">
+		<h3>Weapon Traits</h3>
+		<table id="weapon-table">
+			<thead>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<div id="style-section">
+		<h3>Racial Styles</h3>
+		<table id="style-table">
+			<thead>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

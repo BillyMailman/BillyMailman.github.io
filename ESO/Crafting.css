@@ -1,0 +1,65 @@
+.section-header{
+	text-align: center;
+	background-color:#CCCCCC;
+}
+body{
+	background-color:#FFFFFF;
+}
+td{
+	text-align: center;
+	border:1px solid;
+	border-color:black;
+	min-width:60px;
+}
+td:first-child:not(.section-header){
+	text-align:left;
+}
+tbody>tr:hover{
+	background-color: rgba(128,128,128,0.5);
+}
+thead td{
+	text-align:center;
+	padding-left:5px;
+	padding-right:5px;
+	background-color: white;
+}
+table{
+	border-collapse: collapse;
+}
+.status-YES, .total.total-14{
+	color:green;
+	background-color:rgba(0,255,0,0.5);
+}
+.status-LEARNING, .total{
+	color:goldenrod;
+	background-color:rgba(255,255,0,0.5);
+}
+.status-NO, .total.total-0{
+	color:red;
+	background-color:rgba(255,0,0,0.5);
+}
+.total,.style-number{
+	font-size: larger;
+	font-weight: bolder;
+}
+
+
+td > img {
+	height:24px;
+	width:24px;
+}
+
+.style-superior{
+	color:blue;
+}
+.style-epic{
+	color:purple;
+}
+.style-legendary{
+	color:goldenrod;
+}
+
+tr.section-end>td{
+	border-bottom: 2px solid;
+	border-color:black;
+}

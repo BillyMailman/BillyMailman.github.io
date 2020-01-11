@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My ESO Characters</title>
+<script type="text/javascript">
+var character = 'khajiit';
+var view = 'p';
+var zoom = 'i';
+function setview(newview){
+	view = newview;
+	setimage();
+}
+function setzoom(newzoom){
+	zoom = newzoom;
+	setimage();
+}
+function setcharacter(newcharacter){
+	character = newcharacter;
+	setimage();
+}
+function setimage(){
+	var prefix = 'charimages/';
+	var suffix = '.jpg';
+	document.getElementById('previewimage').src=( prefix + character + view + zoom + suffix );
+}
+</script>
+</head>
+<body>
+<p>I have the following characters:</p>
+<ul>
+<li><strong><a href="javascript:setcharacter('khajiit');">Black-heart</a></strong>, a Khajiit Nightblade in the Dominion</li>
+<li><strong><a href="javascript:setcharacter('nord');">Billy Mailman</a></strong>, a Nord Dragonknight in the Covenant</li>
+<li><strong><a href="javascript:setcharacter('breton');">Tellana</a></strong>, a Breton Sorcerer in the Pact</li>
+<li><strong>Name TBD</strong> a Not-yet-existent Probably-Imperial Templar in the Alliance-not-yet-chosen</li>
+</ul>
+<p>
+<a href="javascript:setview('p');">Profile</a>
+<a href="javascript:setview('b');">Back</a>
+<a href="javascript:setview('s');">Side</a>
+|
+<a href="javascript:setzoom('i');">Zoom In</a>
+<a href="javascript:setzoom('o');">Zoom Out</a>
+</p>
+<img id="previewimage" alt="" src="charimages/khajiitpi.jpg" height="540" width="960"/>
+</body>
+</html>

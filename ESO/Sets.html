@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ESO Set Information</title>
+	<link rel="stylesheet" href="Sets.css"/>
+	<script type="text/javascript" src="/ESO/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.4.0/jquery.floatThead.min.js"></script>
+	<script type="text/javascript" src="Sets.js"></script>
+	<script type="text/javascript">
+	$(document).ready(prepWork);
+	</script>
+</head>
+<body>
+	<h1>Billy's Set Browser</h1>
+	<div id="control-section">
+    <fieldset class="toggle" id="filterControls">
+			<legend>Filter Controls</legend>
+			<br/>
+			<fieldset class="toggle">
+				<legend>Availability</legend>
+				<fieldset class="checkall">
+					<legend>Include</legend>
+					<input id="include-Craftable" class="availability include" type="checkbox"/><label for="include-Craftable">Craftable</label>
+					<input id="include-Overland" class="availability include" type="checkbox"/><label for="include-Overland">Overland</label>
+					<input id="include-Dungeon" class="availability include" type="checkbox"/><label for="include-Dungeon">Dungeon</label>
+					<input id="include-Arena" class="availability include" type="checkbox"/><label for="include-Arena">Arena</label>
+					<input id="include-Trial" class="availability include" type="checkbox"/><label for="include-Trial">Trial</label>
+					<input id="include-Pvp" class="availability include" type="checkbox"/><label for="include-Pvp">PvP</label>
+				</fieldset>
+				<fieldset class="checkall">
+					<legend>Exclude</legend>
+					<input id="exclude-Craftable" class="availability exclude" type="checkbox"/><label for="exclude-Craftable">Craftable</label>
+					<input id="exclude-Overland" class="availability exclude" type="checkbox"/><label for="exclude-Overland">Overland</label>
+					<input id="exclude-Dungeon" class="availability exclude" type="checkbox"/><label for="exclude-Dungeon">Dungeon</label>
+					<input id="exclude-Arena" class="availability exclude" type="checkbox"/><label for="exclude-Arena">Arena</label>
+					<input id="exclude-Trial" class="availability exclude" type="checkbox"/><label for="exclude-Trial">Trial</label>
+					<input id="exclude-Pvp" class="availability exclude" type="checkbox"/><label for="exclude-Pvp">PvP</label>
+				</fieldset>
+			</fieldset>
+			<fieldset class="toggle">
+				<legend>Style</legend>
+				<fieldset class="checkall">
+					<legend>Include</legend>
+					<input id="include-Any" class="style include" type="checkbox"/><label for="include-Any">Any</label>
+					<input id="include-Altmer" class="style include" type="checkbox"/><label for="include-Altmer">Altmer</label>
+					<input id="include-Dunmer" class="style include" type="checkbox"/><label for="include-Dunmer">Dunmer</label>
+					<input id="include-Bosmer" class="style include" type="checkbox"/><label for="include-Bosmer">Bosmer</label>
+					<input id="include-Nord" class="style include" type="checkbox"/><label for="include-Nord">Nord</label>
+					<input id="include-Breton" class="style include" type="checkbox"/><label for="include-Breton">Breton</label>
+					<input id="include-Redguard" class="style include" type="checkbox"/><label for="include-Redguard">Redguard</label>
+					<input id="include-Khajiit" class="style include" type="checkbox"/><label for="include-Khajiit">Khajiit</label>
+					<input id="include-Orcish" class="style include" type="checkbox"/><label for="include-Orcish">Orcish</label>
+					<input id="include-Argonian" class="style include" type="checkbox"/><label for="include-Argonian">Argonian</label>
+					<br/>
+					<input id="include-AncientElf" class="style include" type="checkbox"/><label for="include-AncientElf">Ancient Elf</label>
+					<input id="include-Barbaric" class="style include" type="checkbox"/><label for="include-Barbaric">Barbaric</label>
+					<input id="include-Primal" class="style include" type="checkbox"/><label for="include-Primal">Primal</label>
+					<input id="include-Dwemer" class="style include" type="checkbox"/><label for="include-Dwemer">Dwemer</label>
+					<input id="include-Yokudan" class="style include" type="checkbox"/><label for="include-Yokudan">Yokudan</label>
+					<input id="include-AncientOrc" class="style include" type="checkbox"/><label for="include-AncientOrc">Ancient Orc</label>
+					<input id="include-Trinimac" class="style include" type="checkbox"/><label for="include-Trinimac">Trinimac</label>
+					<input id="include-Malacath" class="style include" type="checkbox"/><label for="include-Malacath">Malacath</label>
+					<br/>
+					<input id="include-Outlaw" class="style include" type="checkbox"/><label for="include-Outlaw">Outlaw</label>
+					<input id="include-SoulShriven" class="style include" type="checkbox"/><label for="include-SoulShriven">Soul Shriven</label>
+					<input id="include-ThievesGuild" class="style include" type="checkbox"/><label for="include-ThievesGuild">Thieves Guild</label>
+					<input id="include-DarkBrotherhood" class="style include" type="checkbox"/><label for="include-DarkBrotherhood">Dark Brotherhood</label>
+					<input id="include-Draugr" class="style include" type="checkbox"/><label for="include-Draugr">Draugr</label>
+					<input id="include-Minotaur" class="style include" type="checkbox"/><label for="include-Minotaur">Minotaur</label>
+					<input id="include-OrderOfTheHour" class="style include" type="checkbox"/><label for="include-OrderOfTheHour">Order of the Hour</label>
+					<br/>
+					<input id="include-RaGada" class="style include" type="checkbox"/><label for="include-RaGada">Ra Gada</label>
+					<input id="include-Ashlander" class="style include" type="checkbox"/><label for="include-Ashlander">Ashlander</label>
+				</fieldset>
+				<fieldset class="checkall">
+					<legend>Exclude</legend>
+					<input id="exclude-Any" class="style exclude" type="checkbox"/><label for="exclude-Any">Any</label>
+					<input id="exclude-Altmer" class="style exclude" type="checkbox"/><label for="exclude-Altmer">Altmer</label>
+					<input id="exclude-Dunmer" class="style exclude" type="checkbox"/><label for="exclude-Dunmer">Dunmer</label>
+					<input id="exclude-Bosmer" class="style exclude" type="checkbox"/><label for="exclude-Bosmer">Bosmer</label>
+					<input id="exclude-Nord" class="style exclude" type="checkbox"/><label for="exclude-Nord">Nord</label>
+					<input id="exclude-Breton" class="style exclude" type="checkbox"/><label for="exclude-Breton">Breton</label>
+					<input id="exclude-Redguard" class="style exclude" type="checkbox"/><label for="exclude-Redguard">Redguard</label>
+					<input id="exclude-Khajiit" class="style exclude" type="checkbox"/><label for="exclude-Khajiit">Khajiit</label>
+					<input id="exclude-Orcish" class="style exclude" type="checkbox"/><label for="exclude-Orcish">Orcish</label>
+					<input id="exclude-Argonian" class="style exclude" type="checkbox"/><label for="exclude-Argonian">Argonian</label>
+					<br/>
+					<input id="exclude-AncientElf" class="style exclude" type="checkbox"/><label for="exclude-AncientElf">Ancient Elf</label>
+					<input id="exclude-Barbaric" class="style exclude" type="checkbox"/><label for="exclude-Barbaric">Barbaric</label>
+					<input id="exclude-Primal" class="style exclude" type="checkbox"/><label for="exclude-Primal">Primal</label>
+					<input id="exclude-Dwemer" class="style exclude" type="checkbox"/><label for="exclude-Dwemer">Dwemer</label>
+					<input id="exclude-Yokudan" class="style exclude" type="checkbox"/><label for="exclude-Yokudan">Yokudan</label>
+					<input id="exclude-AncientOrc" class="style exclude" type="checkbox"/><label for="exclude-AncientOrc">Ancient Orc</label>
+					<input id="exclude-Trinimac" class="style exclude" type="checkbox"/><label for="exclude-Trinimac">Trinimac</label>
+					<input id="exclude-Malacath" class="style exclude" type="checkbox"/><label for="exclude-Malacath">Malacath</label>
+					<br/>
+					<input id="exclude-Outlaw" class="style exclude" type="checkbox"/><label for="exclude-Outlaw">Outlaw</label>
+					<input id="exclude-SoulShriven" class="style exclude" type="checkbox"/><label for="exclude-SoulShriven">Soul Shriven</label>
+					<input id="exclude-ThievesGuild" class="style exclude" type="checkbox"/><label for="exclude-ThievesGuild">Thieves Guild</label>
+					<input id="exclude-DarkBrotherhood" class="style exclude" type="checkbox"/><label for="exclude-DarkBrotherhood">Dark Brotherhood</label>
+					<input id="exclude-Draugr" class="style exclude" type="checkbox"/><label for="exclude-Draugr">Draugr</label>
+					<input id="exclude-Minotaur" class="style exclude" type="checkbox"/><label for="exclude-Minotaur">Minotaur</label>
+					<input id="exclude-OrderOfTheHour" class="style exclude" type="checkbox"/><label for="exclude-OrderOfTheHour ">Order of the Hour </label>
+					<br/>
+					<input id="exclude-RaGada" class="style exclude" type="checkbox"/><label for="exclude-RaGada">Ra Gada</label>
+					<input id="exclude-Ashlander" class="style exclude" type="checkbox"/><label for="exclude-Ashlander">Ashlander</label>
+				</fieldset>
+			</fieldset>
+			<fieldset class="toggle">
+				<legend>Weight</legend>
+				<fieldset class="checkall">
+					<legend>Include</legend>
+					<input id="include-Light" class="weight include" type="checkbox"/><label for="include-Light">Light</label>
+					<input id="include-Medium" class="weight include" type="checkbox"/><label for="include-Medium">Medium</label>
+					<input id="include-Heavy" class="weight include" type="checkbox"/><label for="include-Heavy">Heavy</label>
+					<input id="include-All" class="weight include" type="checkbox"/><label for="include-All">All</label>
+				</fieldset>
+				<fieldset class="checkall">
+					<legend>Exclude</legend>
+					<input id="exclude-Light" class="weight exclude" type="checkbox"/><label for="exclude-Light">Light</label>
+					<input id="exclude-Medium" class="weight exclude" type="checkbox"/><label for="exclude-Medium">Medium</label>
+					<input id="exclude-Heavy" class="weight exclude" type="checkbox"/><label for="exclude-Heavy">Heavy</label>
+					<input id="exclude-All" class="weight exclude" type="checkbox"/><label for="exclude-All">All</label>
+				</fieldset>
+			</fieldset>
+			<fieldset class="toggle">
+				<legend>Bonus Colors</legend>
+				<fieldset class="checkall">
+					<legend>Include</legend>
+					<input id="include-Red" class="bonus-color include" type="checkbox"/><label for="include-Red">Red</label>
+					<input id="include-Green" class="bonus-color include" type="checkbox"/><label for="include-Green">Green</label>
+					<input id="include-Blue" class="bonus-color include" type="checkbox"/><label for="include-Blue">Blue</label>
+					<input id="include-Other" class="bonus-color include" type="checkbox"/><label for="include-Other">Other</label>
+				</fieldset>
+				<fieldset class="checkall">
+					<legend>Exclude</legend>
+					<input id="exclude-Red" class="bonus-color exclude" type="checkbox"/><label for="exclude-Red">Red</label>
+					<input id="exclude-Green" class="bonus-color exclude" type="checkbox"/><label for="exclude-Green">Green</label>
+					<input id="exclude-Blue" class="bonus-color exclude" type="checkbox"/><label for="exclude-Blue">Blue</label>
+					<input id="exclude-Other" class="bonus-color exclude" type="checkbox"/><label for="exclude-Other">Other</label>
+				</fieldset>
+			</fieldset>
+			<fieldset class="toggle">
+				<legend>Bonuses</legend>
+				<fieldset class="checkall">
+					<legend>Include</legend>
+					<input id="include-MaxHP" class="bonus include" type="checkbox"/><label for="include-MaxHP">Max Health</label>
+					<input id="include-HPRec" class="bonus include" type="checkbox"/><label for="include-HPRec">Health Recovery</label>
+					<input id="include-PhysRes" class="bonus include" type="checkbox"/><label for="include-PhysRes">Physical Resistance</label>
+					<input id="include-SpellRes" class="bonus include" type="checkbox"/><label for="include-SpellRes">Spell Resistance</label>
+					<input id="include-HealTaken" class="bonus include" type="checkbox"/><label for="include-HealTaken">Healing Taken</label>
+					<br/>
+					<input id="include-MaxMP" class="bonus include" type="checkbox"/><label for="include-MaxMP">Max Magicka</label>
+					<input id="include-MPRec" class="bonus include" type="checkbox"/><label for="include-MPRec">Magicka Recovery</label>
+					<input id="include-SpellDamage" class="bonus include" type="checkbox"/><label for="include-SpellDamage">Spell Damage</label>
+					<input id="include-SpellCrit" class="bonus include" type="checkbox"/><label for="include-SpellCrit">Spell Critical</label>
+					<br/>
+					<input id="include-MaxStam" class="bonus include" type="checkbox"/><label for="include-MaxStam">Max Stamina</label>
+					<input id="include-StamRec" class="bonus include" type="checkbox"/><label for="include-StamRec">Stamina Recovery</label>
+					<input id="include-WeaponDamage" class="bonus include" type="checkbox"/><label for="include-WeaponDamage">Weapon Damage</label>
+					<input id="include-WeaponCrit" class="bonus include" type="checkbox"/><label for="include-WeaponCrit">Weapon Critical</label>
+				</fieldset>
+				<fieldset class="checkall">
+					<legend>Exclude</legend>
+					<input id="exclude-MaxHP" class="bonus exclude" type="checkbox"/><label for="exclude-MaxHP">Max Health</label>
+					<input id="exclude-HPRec" class="bonus exclude" type="checkbox"/><label for="exclude-HPRec">Health Recovery</label>
+					<input id="exclude-PhysRes" class="bonus exclude" type="checkbox"/><label for="exclude-PhysRes">Physical Resistance</label>
+					<input id="exclude-SpellRes" class="bonus exclude" type="checkbox"/><label for="exclude-SpellRes">Spell Resistance</label>
+					<input id="exclude-HealTaken" class="bonus exclude" type="checkbox"/><label for="exclude-HealTaken">Healing Taken</label>
+					<br/>
+					<input id="exclude-MaxMP" class="bonus exclude" type="checkbox"/><label for="exclude-MaxMP">Max Magicka</label>
+					<input id="exclude-MPRec" class="bonus exclude" type="checkbox"/><label for="exclude-MPRec">Magicka Recovery</label>
+					<input id="exclude-SpellDamage" class="bonus exclude" type="checkbox"/><label for="exclude-SpellDamage">Spell Damage</label>
+					<input id="exclude-SpellCrit" class="bonus exclude" type="checkbox"/><label for="exclude-SpellCrit">Spell Critical</label>
+					<br/>
+					<input id="exclude-MaxStam" class="bonus exclude" type="checkbox"/><label for="exclude-MaxStam">Max Stamina</label>
+					<input id="exclude-StamRec" class="bonus exclude" type="checkbox"/><label for="exclude-StamRec">Stamina Recovery</label>
+					<input id="exclude-WeaponDamage" class="bonus exclude" type="checkbox"/><label for="exclude-WeaponDamage">Weapon Damage</label>
+					<input id="exclude-WeaponCrit" class="bonus exclude" type="checkbox"/><label for="exclude-WeaponCrit">Weapon Critical</label>
+				</fieldset>
+			</fieldset>
+			<button type="button" id="applyButton">Apply</button>
+			<button type="button" id="clearButton">Clear All</button>
+		</fieldset>
+  </div>
+	<div id="sets-section">
+		<h3>Sets</h3>
+		<table id="sets-table">
+			<thead>
+        <tr>
+          <td>Set Name</td>
+					<td>Availability</td>
+          <td>Location</td>
+					<td>Style (Accuracy may vary)</td>
+          <td>Weight</td>
+          <td>2pc Bonus</td>
+          <td>3pc Bonus</td>
+          <td>4pc Bonus</td>
+          <td>5pc Bonus</td>
+        </tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<br/>
+	<legal>Most of the data on this page is taken from the ever-amazing <a href="http://uesp.net/">UESP</a>, and thus licensed under the <a href="https://creativecommons.org/licenses/by-sa/2.5/">Creative Commons Attribution-ShareAlike</a> license.
+</body>
+</html>
