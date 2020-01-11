@@ -12,7 +12,7 @@ html {
   /*Panel border should be small, so px-based*/
   border: 1px solid lightgrey;
   margin: 0.5rem;
-  width: 25rem;
+  width: 24rem;
 }
 /*Most things inside the panel shouldn't touch right up to it on the sides.*/
 .panel>*{
