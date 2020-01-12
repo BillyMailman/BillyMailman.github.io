@@ -2,127 +2,328 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Downtime Rules</title>
     <link rel="stylesheet" href="../simple.css"/>
     <script type="text/javascript" src="../jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="../simple.js"></script>
   </head>
   <body>
-    <h1>A header</h1>
-    <p>A Paragraph</p>
-    <p id="test">A paragraph with <br/> a line break</p>
+    <h1>Downtime Rules</h1>
+    <h2>General</h2>
+    <p>General Rules Go Here</p>
+    <p>Notes for Billy to put in here for later:
+      Crafting lifestyle,
+      No DMG Carousing,
+      No DMG/XGtE Magic Crafting/Selling?,
+      No Gaining Renown,
+      No Gaining Levels,
+      No XGtE Rivals,
+      No XGtE Buying Magic,
+      No Pit Fighting,
+      Better names for Crime targets 3/4
+    </p>
+    <h2>Downtime Activities</h2>
+    <p>This is a list of downtime activities you can do:</p>
     <button type="button" id="toggleAll">Toggle All</button>
     <div class="box">
       <div class="panel info">
-        <header>Downtime Rule 1</header>
+        <header>Crafting (PHB)</header>
         <div>
-          <p>Dowtime Rule 1 works like this:</p>
+          <p>Allows you to craft non-magical objects (Note: Common potions of healing are also allowed).</p>
+          <p>Rules:</p>
           <ul>
-            <li>Blah Blah</li>
-            <li>Yadda-yadda</li>
+            <li>Requires proficiency with relevant tools.</li>
+            <li>Requires the relevant tools.</li>
+            <li>May require access to other equipment (forge for smithing, etc.)</li>
+            <li>Must spend one day per 5gp of the item's value.</li>
+            <li>Must spend half the item's value in materials.</li>
+            <li>Multiple characters with the relevant proficiency may work together, each spending time and money, and pooling it together.</li>
+            <li>While crafting, you can maintain a modest lifestyle without having to pay 1 gp per day, or a comfortable lifestyle at half the normal cost.</li>
           </ul>
         </div>
       </div>
       <div class="panel info">
-        <header>Downtime Rule 1</header>
+        <header>Practicing a Profession (PHB)</header>
         <div>
-          <p>Dowtime Rule 1 works like this:</p>
+          <p>Allows you to maintain a modest lifestyle for free.</p>
+          <p>See also Working from XGtE, for an option that may vary more.</p>
+          <p>Rules:</p>
           <ul>
-            <li>Blah Blah</li>
-            <li>Yadda-yadda</li>
+            <li>Must have a relevant profession OR membership in an organisation in-town you can do odd jobs for (temple, guild, etc.)</li>
+            <li>If you use Performance proficiency, you can support a Wealthy lifestyle instead.</li>
           </ul>
         </div>
       </div>
       <div class="panel info">
-        <header>Downtime Rule 1</header>
+        <header>Working (XGtE)</header>
         <div>
-          <p>Dowtime Rule 1 works like this:</p>
+          <p>Allows you to maintain a lifestyle for free.</p>
+          <p>See also Practicing a Profession from PHB, for an option that is less variable.</p>
+          <p>Rules:</p>
           <ul>
-            <li>Blah Blah</li>
-            <li>Yadda-yadda</li>
+            <li>Make a check. Either Str(Athletics) or Dex(Acrobatics) for simple labour, Int(Tool Proficiency) for skilled labour (not Thieves' Tools, though), or Cha(Performance) for work as an entertainer.</li>
+            <li>Your lifestyle depends on the result:
+              <ul>
+                <li>1-9, Poor lifestyle</li>
+                <li>10-14, Modest lifestyle</li>
+                <li>15-20, Comfortable lifestyle</li>
+                <li>21+, Comfortable lifestyle, and 25gp profit</li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
       <div class="panel info">
-        <header>Downtime Rule 1</header>
+        <header>Recuperating (PHB)</header>
         <div>
-          <p>Dowtime Rule 1 works like this:</p>
+          <p>Allows you to heal long-term ongoing effects. See also Relaxation from XGtE.</p>
+          <p>Rules:</p>
           <ul>
-            <li>Blah Blah</li>
-            <li>Yadda-yadda</li>
+            <li>Costs three days of downtime.</li>
+            <li>Make a DC15 Con Save. If you do, you may either:
+              <ul>
+                <li>End one effect on you that prevents you from regaining hit points.</li>
+                <li>For the next 24 hours, gain advantage on saving throws against one disease or poison currently affecting you.</li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
       <div class="panel info">
-        <header>Downtime Rule 1</header>
+        <header>Relaxation (XGtE)</header>
         <div>
-          <p>Dowtime Rule 1 works like this:</p>
+          <p>Allows you to heal long-term ongoing effects. See also Recuperating from PHB.</p>
+          <p>Rules:</p>
           <ul>
-            <li>Blah Blah</li>
-            <li>Yadda-yadda</li>
+            <li>Costs one week</li>
+            <li>Must be maintaining at least Modest lifestyle during that week</li>
+            <li>Gain advantage on saving throws to recover from long-acting diseases and poisons during the week.</li>
+            <li>At the end of the week, choose one of the following (not caused by a spell/magical effect with a duration):
+              <ul>
+                <li>End one effect that keeps the character from regaining hit points.</li>
+                <li>Restore one ability score that has been reduced to less than its normal value.</li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
       <div class="panel info">
-        <header>Downtime Rule 1</header>
+        <header>Training (PHB)</header>
         <div>
-          <p>Dowtime Rule 1 works like this:</p>
+          <p>Allows you to gain new Tool proficiencies or languages</p>
+          <p>Rules:</p>
           <ul>
-            <li>Blah Blah</li>
-            <li>Yadda-yadda</li>
+            <li>You must find an instructor who can teach you.</li>
+            <li>The training lasts for 50 days and costs 250gp. (Note: PHB says 250 days. Screw that.)</li>
+            <li>Intelligence modifier above 0 reduces the training by 5 days and 25gp for each point. No penalty for negatives.</li>
           </ul>
         </div>
       </div>
       <div class="panel info">
-        <header>Downtime Rule 1</header>
+        <header>Performing Sacred Rites (DMG)</header>
         <div>
-          <p>Dowtime Rule 1 works like this:</p>
+          <p>Allows a pious character to seek the blessings of their god</p>
+          <p>Rules:</p>
           <ul>
-            <li>Blah Blah</li>
-            <li>Yadda-yadda</li>
+            <li>Must be pious, and able to serve at a temple affiliated with your god.</li>
+            <li>Costs ten days.</li>
+            <li>Grants Inspiration at dawn each day for the next ten days.</li>
           </ul>
         </div>
       </div>
       <div class="panel info">
-        <header>Downtime Rule 1</header>
+        <header>Religious Service (XGtE)</header>
         <div>
-          <p>Dowtime Rule 1 works like this:</p>
+          <p>Allows you to earn favours from the clergy of a temple.</p>
+          <p>Rules:</p>
           <ul>
-            <li>Blah Blah</li>
-            <li>Yadda-yadda</li>
+            <li>Costs five days of downtime.</li>
+            <li>Must be at a temple "whose beliefs and ethos align with the character’s".</li>
+            <li>At the end, make an Int(Religion) or Cha(Persuasion) check:
+              <ul>
+                <li>1-10, no effect</li>
+                <li>11-20, you earn one favour</li>
+                <li>21+, you earn two favours</li>
+              </ul>
+            </li>
+            <li>A favour may be asking for political/social help, may be asking for cleric spellcasting at reduced price.</li>
+            <li>A pious character who worships that temple's god may instead spend the favour by praying for an omen, vision, or minor miracle, at DM's discretion.</li>
+            <li>May only store up total favours of 1+Charisma Modifier (minimum 1).</li>
+            <li>If you earn favour(s) and would go over your limit, you can spend extra immediately.</li>
           </ul>
         </div>
       </div>
       <div class="panel info">
-        <header>Downtime Rule 1</header>
+        <header>Running a Business</header>
         <div>
-          <p>Dowtime Rule 1 works like this:</p>
+          <p>Allows you to run a business you own, to make money.</p>
+          <p>Rules:</p>
           <ul>
-            <li>Blah Blah</li>
-            <li>Yadda-yadda</li>
+            <li>Spend as many days as you want, more spent at once (up to 30) is better.</li>
+            <li>Roll D%, and add the number of days (max +30). Consult a table in DMG to see how well the business does.</li>
+            <li>Bigger businesses make more money, but cost more to maintain if you're not helping to run them.</li>
           </ul>
         </div>
       </div>
       <div class="panel info">
-        <header>Downtime Rule 1</header>
+        <header>Sowing Rumours</header>
         <div>
-          <p>Dowtime Rule 1 works like this:</p>
+          <p>Allows you to sow rumours in Saltmarsh</p>
+          <p>Rules:</p>
           <ul>
-            <li>Blah Blah</li>
-            <li>Yadda-yadda</li>
+            <li>Must spend 1 gp per day to cover the cost of drinks, social appearances, and the like.</li>
+            <li>Must make a DC15 Cha(Deception) or Cha(Persuasion) check at the end.</li>
+            <li>If the check fails, that rumour won't take hold, even on further attempts.</li>
+            <li>If the check succeeds, "the community’s prevailing attitude toward the subject shifts one step toward friendly or hostile, as the character wishes."</li>
           </ul>
         </div>
       </div>
       <div class="panel info">
-        <header>Downtime Rule 1</header>
+        <header>Carousing (XGtE)</header>
         <div>
-          <p>Dowtime Rule 1 works like this:</p>
+          <p>Allows you to make contacts.</p>
+          <p>Rules:</p>
           <ul>
-            <li>Blah Blah</li>
-            <li>Yadda-yadda</li>
+            <li>Must spend five days and spend gold per day:
+              <ul>
+                <li>10gp at a lower-class bar</li>
+                <li>50gp at a middle-class bar</li>
+                <li>250gp at an upper-class bar</li>
+              </ul>
+            </li>
+            <li>By default, only upper-class characters can use the upper-class option.</li>
+            <li>After the week ends, make a Cha(Persuasion) check, DM will consult a table, and you will make contacts who may help you in the future</li>
+            <li>A contact gained in this way provides help once, not help for life.</li>
           </ul>
         </div>
       </div>
+      <div class="panel info">
+        <header>Crime (XGtE)</header>
+        <div>
+          <p>Allows you to rob places for money.</p>
+          <p>Rules:</p>
+          <ul>
+            <li>Spend five days and 25gp gathering intel</li>
+            <li>Make three checks, all at the same DC:
+              <ul>
+                <li>Dex(Stealth)</li>
+                <li>Dex(Thieves' Tools)</li>
+                <li>Choice of Int(Investigation), Wis(Perception), or Cha(Deception)</li>
+              </ul>
+            </li>
+            <li>Four types of target are available:
+              <ul>
+                <li>Struggling Merchant. DC10 checks, 50gp reward.</li>
+                <li>Prosperous Merchant. DC15 checks, 100gp reward.</li>
+                <li>Noble. DC20 checks, 200gp reward.</li>
+                <li>Rich person. DC25 checks, 1000gp reward</li>
+              </ul>
+            </li>
+            <li>The results depend on the number of passed checks:
+              <ul>
+                <li>Zero successes, you are caught and jailed.</li>
+                <li>One success, you get nothing, but escape successfully.</li>
+                <li>Two successes, you get half the listed payout.</li>
+                <li>Three successes, you get the listed payout.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel info">
+        <header>Gambling (XGtE)</header>
+        <div>
+          <p>Allows you to gamble your money.</p>
+          <p>Rules:</p>
+          <ul>
+            <li>Costs five days and a stake of 10-1000gp</li>
+            <li>Make a series of three checks:
+              <ul>
+                <li>Wis(Insight)</li>
+                <li>Cha(Deception)</li>
+                <li>Cha(Intimidation)</li>
+                <li>Any one of the above skills may be replaced with a gaming set you are proficient in and possess.</li>
+              </ul>
+            </li>
+            <li>The check DCs are separate and unknown; the DM will roll for them (2d10+5 for each). This is gambling, after all.</li>
+            <li>The results depend on the number of passed checks:
+              <ul>
+                <li>Zero successes, you lost your money, and also go in debt by that amount.</li>
+                <li>One success, you lose half your bet.</li>
+                <li>Two successes, you win back your bet, plus one and a half times its value.</li>
+                <li>Three successes, you win back your bet, plus double.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel info">
+        <header>Research (XGtE)</header>
+        <div>
+          <p>Allows you to learn about a monster, location, item, person, or other noun.</p>
+          <p>Rules:</p>
+          <ul>
+            <li>Must have access to a library or similar source of information</li>
+            <li>Costs five days, and 50gp.</li>
+            <li>Make an Intelligence check. No skill, since this represents information you <em>don't</em> know through your own History/Religion/Arcana/Etc. skills.</li>
+            <li>You may spend additional money on things like access to rarer books, contacting and bribing other researchers, etc. Each 100gp gives +1 to the check, to a maximum of +6.</li>
+            <li>Results:
+              <ul>
+                <li>1-5, you learn nothing.</li>
+                <li>6-10, you learn one piece of lore.</li>
+                <li>11-20, you learn two pieces of lore.</li>
+                <li>21+, you learn three pieces of lore.</li>
+              </ul>
+            </li>
+            <li>Each piece of lore is the equivalent of one true statement about a person, place, or thing. Examples include knowledge of a creature’s resistances, the password needed to enter a sealed dungeon level, the spells commonly prepared by an order of wizards, and so on.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel info">
+        <header>Scribing a Spell Scroll (XGtE)</header>
+        <div>
+          <p>Allows you to create spell scrolls</p>
+          <p>Rules:</p>
+          <ul>
+            <li>Must have proficiency in Arcana.</li>
+            <li>Must have the spell known/prepared/etc., as appropriate to your spellcasting class.</li>
+            <li>Must have any material components during scribing. If the components are consumed by casting, they are consumed in scribing</li>
+            <li>Costs depend on spell level:
+              <ul>
+                <li>Cantrip: 1 day, 15gp</li>
+                <li>Level 1: 1 day, 25gp</li>
+                <li>Level 2: 3 days, 250gp</li>
+                <li>Level 3: 5 days, 500gp</li>
+                <li>Level 4: 10 days, 2,500gp</li>
+                <li>Level 5: 20 days, 5,000gp</li>
+                <li>Level 6: 40 days, 15,000gp</li>
+                <li>Level 7: 80 days, 25,000gp</li>
+                <li>Level 8: 160 days, 50,000gp</li>
+                <li>Level 9: 240 days, 250,000gp</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel info">
+        <header>Name (Book)</header>
+        <div>
+          <p>Allows you to do stuff</p>
+          <p>Rules:</p>
+          <ul>
+            <li>Blah Blah</li>
+            <li>Yadda-yadda</li>
+            <li>Etc:
+              <ul>
+                <li>Thing 1</li>
+                <li>Thing 2</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
     </div>
   </body>
 </html>
