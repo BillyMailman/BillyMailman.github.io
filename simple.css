@@ -7,6 +7,8 @@ html {
   display: flex;
   flex-wrap: wrap;
   align-items: start;
+}
+.box.static{
   justify-content: space-evenly;
 }
 .panel{
