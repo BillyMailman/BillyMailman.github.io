@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Downtime Rules</title>
     <link rel="stylesheet" href="../simple.css"/>
-    <script type="text/javascript" src="../jquery-2.2.1.min.js"></script>
-    <script type="text/javascript" src="../simple.js"></script>
+    <!-- <script type="text/javascript" src="../jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="../simple.js"></script> -->
   </head>
   <body>
     <h1>Downtime Rules</h1>
@@ -26,13 +26,23 @@
       </ul>
     </p>
     <h2>Downtime Activities</h2>
-    <p>This is a list of downtime activities you can do:</p>
-    <button type="button" id="toggleAll">Toggle All</button>
+    <p>This is a list of downtime activities you can do.</p>
+    <h3>Buying/Selling/Crafting Items</h3>
     <div class="box">
+      <div class="panel info">
+        <header>Buying Basic Equipment</header>
+        <div>
+          <p>Not actually a downtime thing, but I'm listing it here.</p>
+          <p>Rules:</p>
+          <ul>
+            <li>There are shops, merchants, and the like in Saltmarsh, from which you can buy most non-magical items.</li>
+          </ul>
+        </div>
+      </div>
       <div class="panel info">
         <header>Crafting (PHB)</header>
         <div>
-          <p>Allows you to craft non-magical objects (Note: Common potions of healing are also allowed).</p>
+          <p>Allows you to craft non-magical objects (Note: Potions of Healing are also allowed).</p>
           <p>Rules:</p>
           <ul>
             <li>Requires proficiency with relevant tools.</li>
@@ -46,10 +56,38 @@
         </div>
       </div>
       <div class="panel info">
+        <header>Scribing a Spell Scroll (XGtE)</header>
+        <div>
+          <p>Allows you to create spell scrolls</p>
+          <p>Rules:</p>
+          <ul>
+            <li>Must have proficiency in Arcana.</li>
+            <li>Must have the spell known/prepared/etc., as appropriate to your spellcasting class.</li>
+            <li>Must have any material components during scribing. If the components are consumed by casting, they are consumed in scribing</li>
+            <li>Costs depend on spell level:
+              <ul>
+                <li>Cantrip: 1 day, 15gp</li>
+                <li>Level 1: 1 day, 25gp</li>
+                <li>Level 2: 3 days, 250gp</li>
+                <li>Level 3: 5 days, 500gp</li>
+                <li>Level 4: 10 days, 2,500gp</li>
+                <li>Level 5: 20 days, 5,000gp</li>
+                <li>Level 6: 40 days, 15,000gp</li>
+                <li>Level 7: 80 days, 25,000gp</li>
+                <li>Level 8: 160 days, 50,000gp</li>
+                <li>Level 9: 240 days, 250,000gp</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h3>Employment</h3>
+    <div class="box">
+      <div class="panel info">
         <header>Practicing a Profession (PHB)</header>
         <div>
           <p>Allows you to maintain a modest lifestyle for free.</p>
-          <p>See also Working from XGtE, for an option that may vary more.</p>
           <p>Rules:</p>
           <ul>
             <li>Must have a relevant profession OR membership in an organisation in-town you can do odd jobs for (temple, guild, etc.)</li>
@@ -77,86 +115,6 @@
         </div>
       </div>
       <div class="panel info">
-        <header>Recuperating (PHB)</header>
-        <div>
-          <p>Allows you to heal long-term ongoing effects. See also Relaxation from XGtE.</p>
-          <p>Rules:</p>
-          <ul>
-            <li>Costs three days of downtime.</li>
-            <li>Make a DC15 Con Save. If you do, you may either:
-              <ul>
-                <li>End one effect on you that prevents you from regaining hit points.</li>
-                <li>For the next 24 hours, gain advantage on saving throws against one disease or poison currently affecting you.</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="panel info">
-        <header>Relaxation (XGtE)</header>
-        <div>
-          <p>Allows you to heal long-term ongoing effects. See also Recuperating from PHB.</p>
-          <p>Rules:</p>
-          <ul>
-            <li>Costs one week</li>
-            <li>Must be maintaining at least Modest lifestyle during that week</li>
-            <li>Gain advantage on saving throws to recover from long-acting diseases and poisons during the week.</li>
-            <li>At the end of the week, choose one of the following (not caused by a spell/magical effect with a duration):
-              <ul>
-                <li>End one effect that keeps the character from regaining hit points.</li>
-                <li>Restore one ability score that has been reduced to less than its normal value.</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="panel info">
-        <header>Training (PHB)</header>
-        <div>
-          <p>Allows you to gain new Tool proficiencies or languages</p>
-          <p>Rules:</p>
-          <ul>
-            <li>You must find an instructor who can teach you.</li>
-            <li>The training lasts for 50 days and costs 250gp. (Note: PHB says 250 days. Screw that.)</li>
-            <li>Intelligence modifier above 0 reduces the training by 5 days and 25gp for each point. No penalty for negatives.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="panel info">
-        <header>Performing Sacred Rites (DMG)</header>
-        <div>
-          <p>Allows a pious character to seek the blessings of their god</p>
-          <p>Rules:</p>
-          <ul>
-            <li>Must be pious, and able to serve at a temple affiliated with your god.</li>
-            <li>Costs ten days.</li>
-            <li>Grants Inspiration at dawn each day for the next ten days.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="panel info">
-        <header>Religious Service (XGtE)</header>
-        <div>
-          <p>Allows you to earn favours from the clergy of a temple.</p>
-          <p>Rules:</p>
-          <ul>
-            <li>Costs five days of downtime.</li>
-            <li>Must be at a temple "whose beliefs and ethos align with the character’s".</li>
-            <li>At the end, make an Int(Religion) or Cha(Persuasion) check:
-              <ul>
-                <li>1-10, no effect</li>
-                <li>11-20, you earn one favour</li>
-                <li>21+, you earn two favours</li>
-              </ul>
-            </li>
-            <li>A favour may be asking for political/social help, may be asking for cleric spellcasting at reduced price.</li>
-            <li>A pious character who worships that temple's god may instead spend the favour by praying for an omen, vision, or minor miracle, at DM's discretion.</li>
-            <li>May only store up total favours of 1+Charisma Modifier (minimum 1).</li>
-            <li>If you earn favour(s) and would go over your limit, you can spend extra immediately.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="panel info">
         <header>Running a Business</header>
         <div>
           <p>Allows you to run a business you own, to make money.</p>
@@ -165,38 +123,6 @@
             <li>Spend as many days as you want, more spent at once (up to 30) is better.</li>
             <li>Roll D%, and add the number of days (max +30). Consult a table in DMG to see how well the business does.</li>
             <li>Bigger businesses make more money, but cost more to maintain if you're not helping to run them.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="panel info">
-        <header>Sowing Rumours</header>
-        <div>
-          <p>Allows you to sow rumours in Saltmarsh</p>
-          <p>Rules:</p>
-          <ul>
-            <li>Must spend 1 gp per day to cover the cost of drinks, social appearances, and the like.</li>
-            <li>Must make a DC15 Cha(Deception) or Cha(Persuasion) check at the end.</li>
-            <li>If the check fails, that rumour won't take hold, even on further attempts.</li>
-            <li>If the check succeeds, "the community’s prevailing attitude toward the subject shifts one step toward friendly or hostile, as the character wishes."</li>
-          </ul>
-        </div>
-      </div>
-      <div class="panel info">
-        <header>Carousing (XGtE)</header>
-        <div>
-          <p>Allows you to make contacts.</p>
-          <p>Rules:</p>
-          <ul>
-            <li>Must spend five days and spend gold per day:
-              <ul>
-                <li>10gp at a lower-class bar</li>
-                <li>50gp at a middle-class bar</li>
-                <li>250gp at an upper-class bar</li>
-              </ul>
-            </li>
-            <li>By default, only upper-class characters can use the upper-class option.</li>
-            <li>After the week ends, make a Cha(Persuasion) check, DM will consult a table, and you will make contacts who may help you in the future</li>
-            <li>A contact gained in this way provides help once, not help for life.</li>
           </ul>
         </div>
       </div>
@@ -294,6 +220,33 @@
           </ul>
         </div>
       </div>
+    </div>
+    <h3>Training and Preparation</h3>
+    <div class="box">
+      <div class="panel info">
+        <header>Training (PHB)</header>
+        <div>
+          <p>Allows you to gain new Tool proficiencies or languages</p>
+          <p>Rules:</p>
+          <ul>
+            <li>You must find an instructor who can teach you.</li>
+            <li>The training lasts for 50 days and costs 250gp. (Note: PHB says 250 days. Screw that.)</li>
+            <li>Intelligence modifier above 0 reduces the training by 5 days and 25gp for each point. No penalty for negatives.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel info">
+        <header>Performing Sacred Rites (DMG)</header>
+        <div>
+          <p>Allows a pious character to seek the blessings of their god</p>
+          <p>Rules:</p>
+          <ul>
+            <li>Must be pious, and able to serve at a temple affiliated with your god.</li>
+            <li>Costs ten days.</li>
+            <li>Grants Inspiration at dawn each day for the next ten days.</li>
+          </ul>
+        </div>
+      </div>
       <div class="panel info">
         <header>Research (XGtE)</header>
         <div>
@@ -316,27 +269,95 @@
           </ul>
         </div>
       </div>
+    </div>
+    <h3>Social</h3>
+    <div class="box">
       <div class="panel info">
-        <header>Scribing a Spell Scroll (XGtE)</header>
+        <header>Religious Service (XGtE)</header>
         <div>
-          <p>Allows you to create spell scrolls</p>
+          <p>Allows you to earn favours from the clergy of a temple.</p>
           <p>Rules:</p>
           <ul>
-            <li>Must have proficiency in Arcana.</li>
-            <li>Must have the spell known/prepared/etc., as appropriate to your spellcasting class.</li>
-            <li>Must have any material components during scribing. If the components are consumed by casting, they are consumed in scribing</li>
-            <li>Costs depend on spell level:
+            <li>Costs five days of downtime.</li>
+            <li>Must be at a temple "whose beliefs and ethos align with the character’s".</li>
+            <li>At the end, make an Int(Religion) or Cha(Persuasion) check:
               <ul>
-                <li>Cantrip: 1 day, 15gp</li>
-                <li>Level 1: 1 day, 25gp</li>
-                <li>Level 2: 3 days, 250gp</li>
-                <li>Level 3: 5 days, 500gp</li>
-                <li>Level 4: 10 days, 2,500gp</li>
-                <li>Level 5: 20 days, 5,000gp</li>
-                <li>Level 6: 40 days, 15,000gp</li>
-                <li>Level 7: 80 days, 25,000gp</li>
-                <li>Level 8: 160 days, 50,000gp</li>
-                <li>Level 9: 240 days, 250,000gp</li>
+                <li>1-10, no effect</li>
+                <li>11-20, you earn one favour</li>
+                <li>21+, you earn two favours</li>
+              </ul>
+            </li>
+            <li>A favour may be asking for political/social help, may be asking for cleric spellcasting at reduced price.</li>
+            <li>A pious character who worships that temple's god may instead spend the favour by praying for an omen, vision, or minor miracle, at DM's discretion.</li>
+            <li>May only store up total favours of 1+Charisma Modifier (minimum 1).</li>
+            <li>If you earn favour(s) and would go over your limit, you can spend extra immediately.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel info">
+        <header>Sowing Rumours</header>
+        <div>
+          <p>Allows you to sow rumours in Saltmarsh</p>
+          <p>Rules:</p>
+          <ul>
+            <li>Must spend 1 gp per day to cover the cost of drinks, social appearances, and the like.</li>
+            <li>Must make a DC15 Cha(Deception) or Cha(Persuasion) check at the end.</li>
+            <li>If the check fails, that rumour won't take hold, even on further attempts.</li>
+            <li>If the check succeeds, "the community’s prevailing attitude toward the subject shifts one step toward friendly or hostile, as the character wishes."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel info">
+        <header>Carousing (XGtE)</header>
+        <div>
+          <p>Allows you to make contacts.</p>
+          <p>Rules:</p>
+          <ul>
+            <li>Must spend five days and spend gold per day:
+              <ul>
+                <li>10gp at a lower-class bar</li>
+                <li>50gp at a middle-class bar</li>
+                <li>250gp at an upper-class bar</li>
+              </ul>
+            </li>
+            <li>By default, only upper-class characters can use the upper-class option.</li>
+            <li>After the week ends, make a Cha(Persuasion) check, DM will consult a table, and you will make contacts who may help you in the future</li>
+            <li>A contact gained in this way provides help once, not help for life.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h3>Recovery</h3>
+    <div class="box">
+      <div class="panel info">
+        <header>Recuperating (PHB)</header>
+        <div>
+          <p>Allows you to heal long-term ongoing effects. See also Relaxation from XGtE.</p>
+          <p>Rules:</p>
+          <ul>
+            <li>Costs three days of downtime.</li>
+            <li>Make a DC15 Con Save. If you do, you may either:
+              <ul>
+                <li>End one effect on you that prevents you from regaining hit points.</li>
+                <li>For the next 24 hours, gain advantage on saving throws against one disease or poison currently affecting you.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel info">
+        <header>Relaxation (XGtE)</header>
+        <div>
+          <p>Allows you to heal long-term ongoing effects. See also Recuperating from PHB.</p>
+          <p>Rules:</p>
+          <ul>
+            <li>Costs one week</li>
+            <li>Must be maintaining at least Modest lifestyle during that week</li>
+            <li>Gain advantage on saving throws to recover from long-acting diseases and poisons during the week.</li>
+            <li>At the end of the week, choose one of the following (not caused by a spell/magical effect with a duration):
+              <ul>
+                <li>End one effect that keeps the character from regaining hit points.</li>
+                <li>Restore one ability score that has been reduced to less than its normal value.</li>
               </ul>
             </li>
           </ul>
