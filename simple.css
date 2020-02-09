@@ -33,3 +33,7 @@ html {
 img{
   max-width: 100%;
 }
+
+.locked-info{
+  color: red;
+}
