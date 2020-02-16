@@ -19,7 +19,7 @@
         <li>Proficiency added to crafting.</li>
         <li>Proficiency added to professions, which also now make a profit, instead of just maintaining lifestyle.</li>
         <li>Adjusted time costs of magic item stuff from the broker. Might need more work. Tried to make the random option and the specific option both worthwhile.</li>
-        <li>Made sure Uncommon magic armour wouldn't end up costing less than un-magic armour.</li>
+        <li>Made sure Common/Uncommon magic armour wouldn't end up costing less than non-magic armour.</li>
         <li>Failing completely at crime is no longer guaranteed prison.</li>
         <li>Sped up training a lot. Might speed it up more, and adjust the bonus from int.</li>
       </ul>
@@ -39,7 +39,7 @@
       All the Downtime Activities from the PHB, DMG, and XGtE are available, with the following exceptions:
       <ul>
         <li>Building a Stronghold (DMG) - Unsuitable to a campaign on the seas.</li>
-        <li>Carousing (DMG) - This activity plays out more like gambling. XGtE has another Carousing activity, and also has actual Gambling, so this is redundant.</li>
+        <li>Carousing (DMG) - This activity plays out more like gambling. XGtE and GoS have other Carousing activities, and also XGtE has actual Gambling, so this is redundant.</li>
         <li>Gaining Renown (DMG) - I don't plan to use the DMG's Guild/Organisation Renown mechanic.</li>
         <li>Training to Gain Levels (DMG) - We'll be using Milestone Levelling, based on the main GoS modules. No need to train.</li>
         <li>All the complications and Rivals stuff from XGtE - If you guys all buy into the idea, I can maybe use this, but the biggest problem I see is that it only works out-of-the-box with the XGtE Downtime Activities.</li>
@@ -84,6 +84,33 @@
     </div>
     <hr/>
     <h3>Buying/Selling/Crafting Items</h3>
+    <p>
+      For the purpose of buying/selling/crafting items, the following are the values of things:
+      <ul>
+        <li>All standard adventuring gear that has a listed price in the PHB has a value of that price.</li>
+        <li>Basic potions of healing are a 'Magic Item', but they have a listed price in the PHB of 50gp, so that's their price.</li>
+        <li>
+          Magic items have a price based on rarity, as follows:
+          <ul>
+            <li>Common - 75gp</li>
+            <li>Uncommon - 300gp</li>
+            <li>Rare - 2,500gp</li>
+            <li>Very Rare - 25,000gp</li>
+            <li>Legendary - 50,000gp</li>
+          </ul>
+        </li>
+        <li>
+          A magic item which also functions as an item of basic equipment (sword, focus, armour, etc.)
+          has a price of the above, plus the base value of the mundane item.
+          This is to patch over the obviously-silly cheese of Cast-Off Plate Armour costing only 75gp.
+        </li>
+        <li>Per the pricing suggestions in the DMG, consumables are worth half the listed amount, except that Common consumables are worth 50gp.</li>
+        <li>
+          Magic ammunition costs the consumable price for each arrow.
+          Yes, that means that a +1 arrow costs half what a +1 bow is, but because you can stack the arrows' bonus with the bow's, they have to be priced a bit expensively.
+        </li>
+      </ul>
+    </p>
     <div class="box static">
       <div class="panel info">
         <h4>Buying Basic Equipment</h4>
@@ -93,7 +120,7 @@
             There are shops, merchants, and the like in Saltmarsh, from which you can buy most non-magical items.
             There are also likely places where you'll be able to sell most valuables.
             As per PHB, used equipment scavenged off enemies is likely salvagable by the party for their own use, but won't sell for very much money at all.
-            Ordinary shops won't buy magic items, and won't be able to buy anything vastly out of the price range of things they sell.
+            Ordinary shops won't buy magic items, and won't be able to buy anything vastly out of the price range of the things that they sell.
           </p>
           <p>Shops you've found:</p>
           <ul>
@@ -109,7 +136,7 @@
           <ul>
             <li class="locked-info">Must have met the appropriate broker in Saltmarsh</li>
             <li>Must have a magic item to sell, and must have identified what it is.</li>
-            <li>Because they must make a profit, the broker will pay half what the item would cost.</li>
+            <li>Because they must make a profit, the broker will pay half the item's value.</li>
           </ul>
         </div>
       </div>
@@ -121,19 +148,10 @@
           <ul>
             <li class="locked-info">Must have met the appropriate broker in Saltmarsh</li>
             <li>
-              Must spend a week negotiating with the broked on specifics of the item, haggling prices,
+              Must spend a week on the back-and-forth with the broker, negotiating specifics of the item, haggling prices,
               avoiding letting them sell you crap for a high price, etc.
             </li>
             <li>Must be asking for a specific item from DMG Table F or G.</li>
-          </ul>
-          <p>Prices are as follows:</p>
-          <p>(Magic items that are also a weapon/armour/etc. cost the below, PLUS the item's base cost)</p>
-          <ul>
-            <li>Common - 75gp</li>
-            <li>Uncommon - 300gp</li>
-            <li>Rare - 2,500gp</li>
-            <li>Very Rare - 25,000gp</li>
-            <li>Legendary - 50,000gp</li>
           </ul>
         </div>
       </div>
@@ -153,14 +171,6 @@
             <li>No making anything impossible (firearms, grenades, etc.), and any item that obviously requires exotic materials may require some extra work to get hold of those.</li>
           </ul>
           <p>
-            You may make:
-            <ul>
-              <li>Non-magical equipment</li>
-              <li>Common-grade potions (Herbalism Kit).</li>
-              <li>Magic items. Value for crafting is the same as if buying them from the Broker. For magic armour/shields/weapons, you need the base item. I'll work out needed proficiencies on an as-needed basis.</li>
-            </ul>
-          </p>
-          <p>
             For smaller items that you can craft in under a day by the above rules, the remaining value can be rolled over into other items.
           </p>
           <p>
@@ -168,6 +178,7 @@
             As a greatsword costs 50gp, they would then later need to spend two more days forging, with 7.5gp spent on the third day, and only 2.5 on the last.
             They could also, however, spend the remaining 5gp of their limit for that day, and make a 10gp item such as a battleaxe, or maybe two handaxes instead.
           </p>
+          <p><a href="crafting-details.html">See here for more details</a></p>
         </div>
       </div>
       <div class="panel info">
@@ -214,7 +225,6 @@
               Note that anything wildly outside the party's ability to purchase, I'll re-roll.
               No un-purchasable Legendaries at level 3.
             </li>
-            <li>Prices are listed in the Specific Items section.</li>
           </ul>
         </div>
       </div>
@@ -370,7 +380,7 @@
           <p>Allows you to gain new Tool proficiencies or languages</p>
           <p>Rules:</p>
           <ul>
-            <li>You must find an instructor who can teach you.</li>
+            <li class="locked-info">You must find an instructor who can teach you.</li>
             <li>The training lasts for 50 days and costs 250gp.</li>
             <li>Intelligence modifier above 0 reduces the training by 5 days and 25gp for each point. No penalty for negatives.</li>
           </ul>
@@ -382,7 +392,7 @@
           <p>Allows a pious character to seek the blessings of their god</p>
           <p>Rules:</p>
           <ul>
-            <li>Must be pious, and able to serve at a temple affiliated with your god.</li>
+            <li class="locked-info">Must be pious, and able to serve at a temple affiliated with your god.</li>
             <li>Costs ten days.</li>
             <li>Grants Inspiration at dawn each day for the next ten days.</li>
           </ul>
@@ -394,7 +404,7 @@
           <p>Allows you to learn about a monster, location, item, person, or other noun.</p>
           <p>Rules:</p>
           <ul>
-            <li>Must have access to a library or similar source of information</li>
+            <li class="locked-info">Must have access to a library or similar source of information</li>
             <li>Costs five days, and 50gp.</li>
             <li>Make an Intelligence check. No skill, since this represents information you <em>don't</em> know through your own History/Religion/Arcana/Etc. skills.</li>
             <li>You may spend additional money on things like access to rarer books, contacting and bribing other researchers, etc. Each 100gp gives +1 to the check, to a maximum of +6.</li>
@@ -407,6 +417,23 @@
               </ul>
             </li>
             <li>Each piece of lore is the equivalent of one true statement about a person, place, or thing. Examples include knowledge of a creature’s resistances, the password needed to enter a sealed dungeon level, the spells commonly prepared by an order of wizards, and so on.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel info">
+        <h4>Research (GoS)</h4>
+        <div>
+          <p>Allows you to learn about the Saltmarsh region.</p>
+          <p>
+            This option is cheaper than the XGtE version, and guaranteed to learn something, but only works on local things, and can't learn as much if your Int Mod is high.
+          </p>
+          <p>Rules:</p>
+          <ul>
+            <li class="locked-info">Must have met the correct NPC.</li>
+            <li>You spend one week working for them.</li>
+            <li>During the week, you afford up to a modest lifestyle for free.</li>
+            <li>You also learn one piece of lore regarding the region around Saltmarsh.</li>
+            <li>Each piece of lore is the equivalent of one true statement about a person, place, or thing that found within 25 miles of Saltmarsh.</li>
           </ul>
         </div>
       </div>
@@ -428,21 +455,15 @@
         </div>
       </div>
       <div class="panel info">
-        <h4>Carousing (XGtE)</h4>
+        <h4>Carousing (GoS)</h4>
         <div>
           <p>Allows you to make contacts.</p>
           <p>Rules:</p>
           <ul>
-            <li>Must spend five days and spend gold per day:
-              <ul>
-                <li>10gp at a lower-class bar</li>
-                <li>50gp at a middle-class bar</li>
-                <li>250gp at an upper-class bar</li>
-              </ul>
-            </li>
-            <li>By default, only upper-class characters can use the upper-class option.</li>
-            <li>After the week ends, make a Cha(Persuasion) check, DM will consult a table, and you will make contacts who may help you in the future</li>
-            <li>A contact gained in this way provides help once, not help for life.</li>
+            <li class="locked-info">Must pick a tavern in town that you know of, and spend your days drinking there.</li>
+            <li>Takes a week, and costs 2d10 gold.</li>
+            <li>After the week ends, you earn a contact in town. The contact depends on the bar.</li>
+            <li>This contact "acts as a trusted friend and offers help as necessary, though they are unwilling to risk their life or possessions."</li>
           </ul>
         </div>
       </div>
