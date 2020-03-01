@@ -17,6 +17,9 @@ html {
   margin: 0.5rem;
   width: 24rem;
 }
+.panel.wide{
+  width: auto;
+}
 /*Most things inside the panel shouldn't touch right up to it on the sides.*/
 .panel>*{
   margin-left: 0.5rem;
