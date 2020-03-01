@@ -40,3 +40,10 @@ img{
 .locked-info{
   color: red;
 }
+.loot{
+  color: darkgoldenrod;
+}
+[title]{
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
