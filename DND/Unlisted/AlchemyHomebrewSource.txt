@@ -1,0 +1,29 @@
+# Additional Alchemical Rules / Recipes
+
+Being hereupon written a list of all resources alchemical which have, up unto this point, been discovered by or made available to Reese Urvemahsput, Gnome alchemist and engineer, which have prior to this gone undocumented in the common annals of the functioning of the world of Oerth.
+
+Yes, I wrote that paragraph just because this has the fancy-letter-at-the-start feature. Admit it, it's awesome.
+
+## Additional Rules / Rulings
+
+### Alchemist's Fire Damage
+
+Per [this sage advice post](https://www.sageadvice.eu/2018/04/13/does-alchemists-fire-on-hit-adds-dex-modifier-to-damage/), Alchemist's Fire deals 1d4+Dex damage every round, similar to an actual ranged weapon. Despite this, the Alchemist's Fire is not a "finesse or a ranged weapon", so it doesn't qualify for features like Sneak Attack.
+
+Similarly, any other items described below which deal damage have the thrower's Dexterity modifier apply to that damage, but do not count as thrown.
+
+### Feat: Mad Bomber
+
+Based off the **Bomb Thrower** feat in [*Additional Alchemy*](https://www.dmsguild.com/product/193322/Additional-Alchemy).
+
+---
+You are an expert at creating and throwing alchemical materials. You gain the following benefits:
+- Increase your Dexterity or Intelligence score by 1, to a maximum of 20.
+- You gain proficiency in alchemist’s supplies. If you are already proficient, your proficiency bonus is doubled when you make ability checks with them. This doubled proficiency bonus counts towards determining the amount of progress you can make per day while crafting alchemical items.
+- You gain proficiency with improvised weapons.
+- Double the range of any improvised weapon you throw.
+- When a creature makes a saving throw or ability check against an alchemical item you throw, the DC is equal to 8 + your proficiency bonus + your Intelligence modifier.
+
+## New Items
+
+No new alchemical items have been discovered by Reese.
