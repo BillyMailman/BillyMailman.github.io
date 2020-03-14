@@ -25,12 +25,15 @@ html {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-.panel header{
+.panel summary{
   /*Headers need to use padding instead of margin, so the grey background works right.*/
   background: lightgrey;
   padding: 0.25rem;
   font-size: 1.5rem;
   margin:0rem;
+}
+summary>h4{
+  display: inline;
 }
 
 img{

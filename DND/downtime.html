@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Downtime Rules</title>
     <link rel="stylesheet" href="../simple.css"/>
+    <script type="text/javascript" src="../jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="../simple.js"></script>
   </head>
   <body>
     <h1>Downtime Rules</h1>
@@ -57,10 +59,13 @@
       or other class/race/etc. features that take time, we'll resolve it out with those features' rules.
       For anything else, give me a day or two, and I'll do what I can to come up with reasonable rules.
     </p>
+    <p>
+      <button type="button" id="openAll">Open All </button><button type="button" id="closeAll">Close All </button>
+    </p>
     <h3>Other Options</h3>
     <div class="box static">
-      <div class="panel info">
-        <h4>Other Features</h4>
+      <details class="panel info" open>
+        <summary><h4>Other Features</h4></summary>
         <div>
           <p>
             You may have features from your class, or background, proficiency-related things,
@@ -73,16 +78,16 @@
             <li>Etc.</li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Make stuff up!</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Make stuff up!</h4></summary>
         <div>
           <p>
             The below are all based on official rules pulled from WotC books, but those books are pretty explicitly providing <em>examples</em>.
             Feel free to come up with your own ideas of what to do in town.
           </p>
         </div>
-      </div>
+      </details>
     </div>
     <hr/>
     <h3>Buying/Selling/Crafting Items</h3>
@@ -114,8 +119,8 @@
       </ul>
     </p>
     <div class="box static">
-      <div class="panel info">
-        <h4>Buying Basic Equipment</h4>
+      <details class="panel info" open>
+        <summary><h4>Buying Basic Equipment</h4></summary>
         <div>
           <p>
             Not actually a downtime thing, but I'm listing it here.
@@ -129,9 +134,9 @@
             <li>Weekly Market - Open on Saturdays, this market was originally established to sell fish, but has since grown to include a wide variety of goods. The center area of the square contains a dozen long tables where shoppers can eat communally. Non-illegal items from the Player’s Handbook costing up to 150 gp are available for purchase here.</li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Selling Magic Items (GoS)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Selling Magic Items (GoS)</h4></summary>
         <div>
           <p>Allows you to sell magic items.</p>
           <p>Rules:</p>
@@ -142,9 +147,9 @@
             <li>Because she must make a profit, Xendros will pay half the item's value.</li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Hiring Xendros for Specific items (GoS)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Hiring Xendros for Specific items (GoS)</h4></summary>
         <div>
           <p>Allows you to purchase a specific magic item</p>
           <p>Rules:</p>
@@ -157,9 +162,9 @@
             <li>Must be asking for a specific item from DMG Table F or G.</li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Crafting (PHB)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Crafting (PHB)</h4></summary>
         <div>
           <p>Allows you to craft items.</p>
           <p>Rules:</p>
@@ -183,9 +188,9 @@
           </p>
           <p><a href="crafting-details.html">See here for more details</a></p>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Scribing a Spell Scroll (XGtE)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Scribing a Spell Scroll (XGtE)</h4></summary>
         <div>
           <p>Allows you to create spell scrolls</p>
           <p>Rules:</p>
@@ -209,9 +214,9 @@
             </li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Hiring Xendros for Random items (GoS)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Hiring Xendros for Random items (GoS)</h4></summary>
         <div>
           <p>Allows you to purchase random magic items</p>
           <p>Rules:</p>
@@ -227,12 +232,12 @@
           </ul>
         </div>
       </div>
-    </div>
+    </details>
     <hr/>
     <h3>Employment</h3>
     <div class="box static">
-      <div class="panel info">
-        <h4>Practicing a Profession (PHB)</h4>
+      <details class="panel info" open>
+        <summary><h4>Practicing a Profession (PHB)</h4></summary>
         <div>
           <p>Allows you to make money with your skills.</p>
           <p>Rules:</p>
@@ -241,9 +246,9 @@
             <li>Earn (2.5 * proficiency)gp per day.</li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Running a Business (DMG)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Running a Business (DMG)</h4></summary>
         <div>
           <p>Allows you to run a business that you own, to make money.</p>
           <p>Probably won't come up, but here it is.</p>
@@ -255,9 +260,9 @@
             <li>Bigger businesses make more money, but cost more to maintain if you're not helping to run them.</li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Working (XGtE)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Working (XGtE)</h4></summary>
         <div>
           <p>Allows you to maintain a lifestyle for free.</p>
           <p>See also Practicing a Profession from PHB, for an option that is less variable.</p>
@@ -274,9 +279,9 @@
             </li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Gambling (XGtE)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Gambling (XGtE)</h4></summary>
         <div>
           <p>Allows you to gamble your money.</p>
           <p>Rules:</p>
@@ -301,9 +306,9 @@
             </li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Pit Fighting (XGtE)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Pit Fighting (XGtE)</h4></summary>
         <div>
           <p>Allows you to participate in pit fights for money. This "includes boxing, wrestling, and other nonlethal forms of combat in an organized setting with predetermined matches."</p>
           <p>Rules:</p>
@@ -328,9 +333,9 @@
             </li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Crime (XGtE)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Crime (XGtE)</h4></summary>
         <div>
           <p>Allows you to rob places for money.</p>
           <p>Note that the target names have been changed to fit Saltmarsh better, but the mechanics remain mostly unchanged from XGtE.</p>
@@ -368,13 +373,13 @@
             </p>
           </ul>
         </div>
-      </div>
+      </details>
     </div>
     <hr/>
     <h3>Training and Preparation</h3>
     <div class="box static">
-      <div class="panel info">
-        <h4>Training (PHB/XGtE)</h4>
+      <details class="panel info" open>
+        <summary><h4>Training (PHB/XGtE)</h4></summary>
         <div>
           <p>Allows you to gain new Proficiencies or languages</p>
           <p>Rules:</p>
@@ -387,9 +392,9 @@
             <li>The training can be non-consecutive, and you may switch trainers between party members and a suitable NPC as needed.</li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Performing Sacred Rites (DMG)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Performing Sacred Rites (DMG)</h4></summary>
         <div>
           <p>Allows a pious character to seek the blessings of their god</p>
           <p>Rules:</p>
@@ -399,9 +404,9 @@
             <li>Grants Inspiration at dawn each day for the next ten days.</li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Research (GoS)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Research (GoS)</h4></summary>
         <div>
           <p>Allows you to learn about the Saltmarsh region.</p>
           <p>
@@ -416,9 +421,9 @@
             <li>Each piece of lore is the equivalent of one true statement about a person, place, or thing that found within 25 miles of Saltmarsh.</li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Research (XGtE)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Research (XGtE)</h4></summary>
         <div>
           <p>Allows you to learn about a monster, location, item, person, or other noun.</p>
           <p>Rules:</p>
@@ -438,13 +443,13 @@
             <li>Each piece of lore is the equivalent of one true statement about a person, place, or thing. Examples include knowledge of a creature’s resistances, the password needed to enter a sealed dungeon level, the spells commonly prepared by an order of wizards, and so on.</li>
           </ul>
         </div>
-      </div>
+      </details>
     </div>
     <hr/>
     <h3>Social</h3>
     <div class="box static">
-      <div class="panel info">
-        <h4>Sowing Rumours (DMG)</h4>
+      <details class="panel info" open>
+        <summary><h4>Sowing Rumours (DMG)</h4></summary>
         <div>
           <p>Allows you to sow rumours in Saltmarsh</p>
           <p>Rules:</p>
@@ -456,9 +461,9 @@
             <li>If the check succeeds, "the community’s prevailing attitude toward the subject shifts one step toward friendly or hostile, as the character wishes."</li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Carousing (GoS)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Carousing (GoS)</h4></summary>
         <div>
           <p>Allows you to make contacts.</p>
           <p>Rules:</p>
@@ -469,9 +474,9 @@
             <li>This contact "acts as a trusted friend and offers help as necessary, though they are unwilling to risk their life or possessions."</li>
           </ul>
         </div>
-      </div>
-      <div class="panel info">
-        <h4>Religious Service (XGtE)</h4>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Religious Service (XGtE)</h4></summary>
         <div>
           <p>Allows you to earn favours from the clergy of a temple.</p>
           <p>Rules:</p>
@@ -491,7 +496,7 @@
             <li>If you earn favour(s) and would go over your limit, you can spend extra immediately.</li>
           </ul>
         </div>
-      </div>
+      </details>
     </div>
     <hr/>
     <h3>Recovery</h3>
@@ -499,8 +504,8 @@
       These two are somewhat redundant with each other, but work slightly differently, so I'm leaving both here.
     </p>
     <div class="box static">
-      <div class="panel info">
-        <h4>Recuperating (PHB)</h4>
+      <details class="panel info" open>
+        <summary><h4>Recuperating (PHB)</h4></summary>
         <div>
           <p>Allows you to heal long-term ongoing effects.</p>
           <p>Rules:</p>
@@ -513,10 +518,10 @@
               </ul>
             </li>
           </ul>
-        </div>
-      </div>
-      <div class="panel info">
-        <h4>Relaxation (XGtE)</h4>
+        </details>
+      </details>
+      <details class="panel info" open>
+        <summary><h4>Relaxation (XGtE)</h4></summary>
         <div>
           <p>Allows you to heal long-term ongoing effects.</p>
           <p>Rules:</p>
@@ -532,7 +537,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </details>
     </div>
   </body>
 </html>
