@@ -10,7 +10,7 @@ Yes, I wrote that paragraph just because this has the fancy-letter-at-the-start 
 
 Per [this sage advice post](https://www.sageadvice.eu/2018/04/13/does-alchemists-fire-on-hit-adds-dex-modifier-to-damage/), Alchemist's Fire deals 1d4+Dex damage every round, similar to an actual ranged weapon. Despite this, the Alchemist's Fire is not a "finesse or a ranged weapon", so it doesn't qualify for features like Sneak Attack.
 
-Similarly, any other items described below which deal damage have the thrower's Dexterity modifier apply to that damage, but do not count as thrown.
+Similarly, any other items described below which deal damage have the thrower's Dexterity modifier apply to that damage, but do not count as finesse/ranged.
 
 ### Feat: Mad Bomber
 
@@ -26,4 +26,23 @@ You are an expert at creating and throwing alchemical materials. You gain the fo
 
 ## New Items
 
-No new alchemical items have been discovered by Reese.
+### Tanglefoot Bag
+*Adventuring Gear*&nbsp;&nbsp;&nbsp;
+**Cost**: *25gp*&nbsp;&nbsp;&nbsp;
+**Weight**: *2lb*
+
+This bag of sticky substance can be thrown up to 20 feet as an action. Make a ranged attack against a creature or object, treating the bag as an improvised weapon. On a hit, the target is grappled by the substance in the bag, which hardens after spilling forth.
+
+As an action, the grappled creature can make a DC 10 Strength check, escaping from the substance on a success. The effect ends if the substance is destroyed. The substance has AC 10, 5 hit points, and immunity to poison and psychic damage.
+
+<div style='margin-top:140px'></div>
+
+
+### Thunderstone
+*Adventuring Gear*&nbsp;&nbsp;&nbsp;
+**Cost**: *25gp*&nbsp;&nbsp;&nbsp;
+**Weight**: *1lb*
+
+This small stone can be thrown up to 20 feet as an action, and shatters on impact. Make a ranged attack against a creature or object, treating the stone as an improvised weapon. On a hit, the target takes 1d8 thunder damage.
+
+Whether you hit or miss, the target and each creature within 5 feet of it must make a DC 10 Constitution saving throw or be deafened for 1 minute. An affected creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.
