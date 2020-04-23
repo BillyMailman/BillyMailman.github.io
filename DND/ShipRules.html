@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>On Ships and the Sea</title>
     <link rel="stylesheet" href="../simple.css"/>
+    <link rel="stylesheet" href="../stat-block.css"/>
   </head>
   <body>
     <h1>On Ships and the Sea</h1>
@@ -25,11 +26,79 @@
     <h2>Your Ship</h2>
     <h3>General Stat Block</h3>
     <p>
-      The stat block for your ship is <a href="https://www.dndbeyond.com/vehicles/sailing-ship">here</a>.
-      One caveat is that the map there is inaccurate. Your ship, e.g., has a tiller instead of a wheel,
-      is lacking the Lower Deck/Hold split, and instead has a proper bilge level.
-      The basic map from GoS is <a href="https://media-waterdeep.cursecdn.com/attachments/5/387/03-pc.png">here</a> instead.
+      The base D&D 5e stat block for a sailing ship is <a href="https://www.dndbeyond.com/vehicles/sailing-ship">here</a>.
+      Two problems arise, though. First, your ship has no weapons.
+      Second, the map is inaccurate; Your ship has a tiller instead of a wheel, is lacking the Lower Deck/Hold split, and instead has a proper bilge level.
+      The basic map for your ship is <a href="https://media-waterdeep.cursecdn.com/attachments/5/387/03-pc.png">here</a> instead, and I've reproduced a more-accurate version of the stat block, below.
     </p>
+    <details class="panel wide">
+      <summary>Ship Stat Block</summary>
+      <div class="stat-block">
+        <div class="section">
+          <p class="name">Serenity</p>
+          <p class="type">Gargantuan Vehicle (100ft. by 20ft.)</p>
+          <hr class="section-break"/>
+          <p><span class="label">Creature Capacity</span> 4 officers, 11 crew, 0 passengers<span title="Based on existing berths, one per person. Can increase via hot-bunking, or just buying more hammocks/beds.">*</span></p>
+          <p><span class="label">Cargo Capacity</span> 100 tons (200,000lbs)</p>
+          <p><span class="label">Travel Pace</span> 5 miles per hour (40 miles per shift, 120 miles per day)<span title="Reduced if sails are damaged">*</span></p>
+          <hr class="section-break"/>
+        </div>
+        <div class="section">
+          <div class="abilities">
+            <p><span class="ability">STR</span><span class="score">20</span><span class="modifier">(+5)</span></p>
+            <p><span class="ability">DEX</span><span class="score">7</span><span class="modifier">(-2)</span></p>
+            <p><span class="ability">CON</span><span class="score">17</span><span class="modifier">(+3)</span></p>
+            <p><span class="ability">INT</span><span class="score">0</span><span class="modifier">(-)</span></p>
+            <p><span class="ability">WIS</span><span class="score">0</span><span class="modifier">(-)</span></p>
+            <p><span class="ability">CHA</span><span class="score">0</span><span class="modifier">(-)</span></p>
+          </div>
+          <hr/>
+          <p><span class="label">Damage Immunities</span> poison, psychic</p>
+          <p><span class="label">Condition Immunities</span> blinded, charmed, deafened, exhaustion, frightened, incapacitated, paralyzed, petrified, poisoned, prone, stunned, unconscious</p>
+          <hr class="section-break"/>
+        </div>
+        <div class="section">
+          <p class="section-head">Actions</p>
+          <p>
+            On its turn the ship can take actions based on the number of crew and officers combined:
+            <ul>
+              <li><span class="label">20+</span> Three actions</li>
+              <li><span class="label">10-19</span> Two actions</li>
+              <li><span class="label">3-9</span> One actions</li>
+              <li><span class="label">0-2</span> No actions</li>
+            </ul>
+          </p>
+          <p><span class="label">Move</span> The ship can use its tiller to move with its sails.</p>
+          <p><span class="label">Weapons</span> The ship could fire weapons, if it had any.</p>
+          <hr class="section-break"/>
+        </div>
+        <div class="section">
+          <p class="section-head">Components</p>
+          <hr/>
+          <p class="label">Hull</p>
+          <p><span class="label">Armour Class</span> 15</p>
+          <p><span class="label">Hit Points</span> 300 (Damage Threshold 15)</p>
+          <hr/>
+          <p class="label">Control: Tiller</p>
+          <p><span class="label">Armour Class</span> 18</p>
+          <p><span class="label">Hit Points</span> 50</p>
+          <p>Move up to the speed of one of the ship's sails, with one 90-degree turn. If the tiller is destroyed, the ship can't turn.</p>
+          <hr/>
+          <p class="label">Movement: Sails</p>
+          <p><span class="label">Armour Class</span> 12</p>
+          <p><span class="label">Hit Points</span> 100</p>
+          <p>
+            <span class="label">Speed(Water)</span><span title="All speeds lose 5ft. for every 25 Hit Points lost by the sails.">*</span>
+            <ul>
+              <li>Into the wind: 15ft.</li>
+              <li>With the wind: 60ft.</li>
+              <li>Otherwise: 45ft.</li>
+            </ul>
+          </p>
+        </div>
+        <a href="https://media-waterdeep.cursecdn.com/attachments/5/387/03-pc.png"><img src="https://media-waterdeep.cursecdn.com/attachments/5/387/03-pc.png" alt="Serenity Floorplan"></a>
+      </div>
+    </details>
     <h3>Travelling</h3>
     <p>
       The hard minimum crew for your ship to do anything is three people.
@@ -71,7 +140,13 @@
       Officers will be handled on a case-by-case basis.
       Conveniently, the Council has given you a crew of eight for a year, which puts it at the same eight crew and four officers that the smugglers had.
       This does limit the ship to two actions in combat, or one if the officers are engaging in combat, but the ship only has one action, since it's currently unarmed, so that doesn't really matter.
-      This also means that the ship is exactly at the same number of officers and crew as before, so there's exactly the correct number of berths!
+      This also means that the ship is exactly at the same number of officers and crew as before, so there's currently exactly the correct number of berths.
+    </p>
+    <p>
+      Ghosts of Saltmarsh uses the idea of a Crew Quality Score, which is based on how the crew is treated, and goes up or down over time.
+      The score starts at +4, and ranges between -10 and +10.
+      Per the book, "It decreases as a crew takes casualties, suffers hardship, or endures poor health. It increases if the crew enjoys high morale, has good health care, and receives fair leadership."
+      Based on your treatment of the crew so far, their Crew Quality Score is currently <strong>+5</strong>.
     </p>
   </body>
 </html>
