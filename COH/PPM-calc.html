@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CoH PPM Calculator</title>
+    <link rel="stylesheet" href="../simple.css"/>
+    <script type="text/javascript" src="../jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="PPM-calc.js"></script>
+  </head>
+  <body>
+    <h1>City of Heroes PPM Calculator</h1>
+    <p>
+      Based on <a href="https://forums.homecomingservers.com/topic/5290-procs-per-minute-ppm-information-guide/">This guide</a>, mostly.
+      Very work-in-progress. Still needs stuff for non-clicks, and doesn't account for Arcanatime being added to modified recharge time.
+    </p>
+    <p>
+      <input type="number" id="base-recharge" name="base-recharge" value="" placeholder="Base Recharge">
+    </p>
+    <p>
+      <input type="number" id="PPM" name="PPM" value="" placeholder="PPM value">
+    </p>
+    <p>
+      <input type="number" id="enhancement" name="enhancement" value="" placeholder="Total Enhancement %">
+    </p>
+    <p>
+      <label for="AoE">Is AoE?</label>
+      <input type="checkbox" id="AoE" name="AoE" value="">
+    </p>
+    <p>
+      <input type="number" id="range" name="range" value="" placeholder="Base Range" disabled>
+    </p>
+    <p>
+      <input type="number" id="arc" name="arc" value="" placeholder="Arc" disabled>
+    </p>
+    <hr/>
+    <p>
+      <label for="result">Result:</label>
+      <input type="text" id="result" name="result" value="" disabled>
+    </p>
+  </body>
+</html>
