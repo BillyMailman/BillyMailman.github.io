@@ -46,3 +46,19 @@ As an action, the grappled creature can make a DC 10 Strength check, escaping fr
 This small stone can be thrown up to 20 feet as an action, and shatters on impact. Make a ranged attack against a creature or object, treating the stone as an improvised weapon. On a hit, the target takes 1d8 thunder damage.
 
 Whether you hit or miss, the target and each creature within 5 feet of it must make a DC 10 Constitution saving throw or be deafened for 1 minute. An affected creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.
+
+### Jellyfish Tentacle (Flask)
+*Adventuring Gear*&nbsp;&nbsp;&nbsp;
+**Cost**: *50gp*&nbsp;&nbsp;&nbsp;
+**Weight**: *1lb*
+
+The tentacle of a particular vicious jellyfish, alchemically preserved, and floating in a fragile glass vial. As an action, you can splash the contents of this flask onto a creature within 5 feet of you or throw it up to 20 feet, shattering it on impact. In either case, make a ranged attack against a target creature, treating the tentacle flask as an improvised weapon.
+
+On a hit, the target takes 1d4 lightning damage and must make a DC10 Constitution saving throw or be Poisoned for 1 minute. A poisoned creature can repeat the saving throw at the end of each of its turns, ending the effect on a success.
+
+### Blinding Smoke Pellet
+*Adventuring Gear*&nbsp;&nbsp;&nbsp;
+**Cost**: *50gp*&nbsp;&nbsp;&nbsp;
+**Weight**: *1lb*
+
+This small smoke bomb produces an acrid, caustic smoke, which stings any soft tissues exposed to it. As an action, you can throw this smoke bomb at the feet of a creature within 20 feet of you. The target must make a DC10 Constitution saving throw or be Blinded for 1 minute. A blinded creature can repeat the saving throw at the end of each of its turns, ending the effect on a success.
