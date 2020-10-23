@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CoH PPM Calculator</title>
+    <link rel="stylesheet" href="../simple.css"/>
+    <script type="text/javascript" src="../jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="PPM/PowersetList.js"></script>
+  </head>
+  <body>
+    <h1>Choose a power</h1>
+    <p>
+      <label for="category-select">Power Category: </label>
+      <select name="category-select" id="category-select" disabled onchange="refreshPowersetList()"></select>
+    </p>
+    <p>
+      <label for="powerset-select">Powerset: </label>
+      <select name="powerset-select" id="powerset-select" disabled onchange="refreshPowerList()"></select>
+    </p>
+    <p>
+      <label for="power-select">Power: </label>
+      <select name="power-select" id="power-select" disabled onchange="loadPower()"></select>
+    </p>
+    <h1>Maths</h1>
+    <p>
+      <label for="cast-time-input">Cast Time: </label>
+      <input type="number" name="cast-time-input" id="cast-time-input" step="0.01" min="0" value=""></input>
+    </p>
+    <p>
+      <label for="animation-time-input">Animation Time: </label>
+      <input type="number" name="animation-time-input" id="animation-time-input" step="0.01" min="0" value=""></input>
+    </p>
+    <p>
+      <label for="recharge-time-input">Recharge Time: </label>
+      <input type="number" name="recharge-time-input" id="recharge-time-input" step="0.01" min="0" value=""></input>
+    </p>
+  </body>
+</html>
