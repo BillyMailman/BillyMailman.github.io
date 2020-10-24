@@ -1,42 +1,103 @@
+var powerCategoryList = [];
+var powersetList = [];
+var powersList = [];
+$(document).ready(function(){
+  refreshCategoryList();
+});
+//Fired on initial load. Triggers the first dropdown to be populated.
 function refreshCategoryList(){
   $('#category-select').empty();
+  //Get the full powers list. This URL is hard-coded, but meh.
   $.getJSON('https://coh.tips/powers/v2/',function(data){
-    data.power_categories.forEach((category, i) => {
-      //TODO: Categorize better?
-      var url = category.url;
-      var name = category.name;
+    //Stash the data so we can refer back to it in the other functions
+    powerCategoryList = data.power_categories;
+    //Sort for display.
+    powerCategoryList.sort(function(first, second){
+      var firstIsAT = first.hasOwnProperty('archetype');
+      var secondIsAT = second.hasOwnProperty('archetype');
+      if(!firstIsAT && !secondIsAT)
+      {
+        return first.name < second.name ? -1 : 1;
+      }
+      if(!firstIsAT && secondIsAT){
+        return -1;
+      }
+      if(firstIsAT && !secondIsAT){
+        return 1;
+      }
+      var firstName = first.archetype.name + first.archetype.primary_or_secondary;
+      var secondName = second.archetype.name + second.archetype.primary_or_secondary;
+      return firstName < secondName ? -1 : 1;
+    });
+    //Pre-pend on the null option.
+    powerCategoryList.unshift({'name':'---', 'display_name':'---', 'url':null});
+    //Now, put the categories into the first dropdown.
+    powerCategoryList.forEach((category, i) => {
+      var name;
+      if(category.hasOwnProperty('archetype')){
+        name = category.archetype.name + ' ' + category.display_name;
+      }else{
+        name = category.name
+      }
       var newOption = $('<option></option>');
-      newOption.val(url).html(name);
+      newOption.val(i).text(name);
       $('#category-select').append(newOption);
     });
     $('#category-select').prop('disabled', false);
   });
 }
-$(document).ready(function(){
-  refreshCategoryList();
-});
+//This one fires when a selection is made on the first dropdown, and populates or blanks out the second.
 function refreshPowersetList(){
   $('#powerset-select').empty();
+  $('#powerset-select').prop('disabled', true);
+  $('#power-select').empty();
+  $('#power-select').prop('disabled', true);
+  $('#powerset-icon').attr('src','');
+  $('#power-icon').attr('src','');
   var selected = $('#category-select').val();
-  $.getJSON(selected, function(data){
-    data.power_sets.forEach((powerset, i) => {
+  var category = powerCategoryList[selected]
+  if(category.url === null){
+    //Selection was the dummy at the top. Exit now with things blanked out.
+    return;
+  }
+  //If the category has an AT icon, display it, because pretty pictures
+  if(category.hasOwnProperty('archetype')){
+    $('#powerset-icon').attr('src', category.archetype.icon);
+  }
+  //Get the list of powersets, and put them in the dropdown.
+  $.getJSON(category.url, function(data){
+    powersetList = data.power_sets;
+    //The list does seem to always come back well-sorted, so no sorting here.
+    //Pre-pend the dummy entry.
+    powersetList.unshift({'name':'---', 'display_name':'---', 'url':null})
+    powersetList.forEach((powerset, i) => {
       var url = powerset.url;
-      var name = powerset.name;
+      var name = powerset.display_name;
       var newOption = $('<option></option>');
-      newOption.val(url).html(name);
+      newOption.val(i).html(name);
       $('#powerset-select').append(newOption);
     });
     $('#powerset-select').prop('disabled', false);
   });
 }
-var powersList = [];
+//This is for the second dropdown being chosen, and loads up the last dropdown's options.
 function refreshPowerList(){
   $('#power-select').empty();
+  $('#power-select').prop('disabled', true);
+  $('#power-icon').attr('src','');
   var selected = $('#powerset-select').val();
-  $.getJSON(selected, function(data){
+  var powerset = powersetList[selected];
+  if(powerset.url === null){
+    $('#power-select').prop('disabled', true);
+    return;
+  }
+  $.getJSON(powerset.url, function(data){
     powersList = data.powers;
+    //Again, list seems to be well-sorted, so we don't sort here.
+    //Do need to pre-pend a dummy.
+    powersList.unshift({'name':'---', 'display_name':'---', 'url':null})
     powersList.forEach((power, i) => {
-      var name = power.name;
+      var name = power.display_name;
       var newOption = $('<option></option>');
       newOption.val(i).html(name);
       $('#power-select').append(newOption);
@@ -44,9 +105,16 @@ function refreshPowerList(){
     $('#power-select').prop('disabled', false);
   });
 }
+//And this is for when they select the actual power.
 function loadPower(){
+  $('#power-icon').attr('src','');
   var selected = $('#power-select').val();
   var power = powersList[selected];
+  if(power.url === null)
+  {
+    //This is the dummy entry at the top. Stop here.
+  }
+  $('#power-icon').attr('src',power.icon);
   var castTime = power.activate.cast_time;
   var animationTime = power.activate.animation_time;
   var rechargeTime = power.activate.recharge_time;

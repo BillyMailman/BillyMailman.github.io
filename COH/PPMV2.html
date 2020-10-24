@@ -10,7 +10,7 @@
   <body>
     <h1>Choose a power</h1>
     <p>
-      <label for="category-select">Power Category: </label>
+      <label for="category-select">Power Category: <img id="powerset-icon"></label>
       <select name="category-select" id="category-select" disabled onchange="refreshPowersetList()"></select>
     </p>
     <p>
@@ -18,10 +18,10 @@
       <select name="powerset-select" id="powerset-select" disabled onchange="refreshPowerList()"></select>
     </p>
     <p>
-      <label for="power-select">Power: </label>
+      <label for="power-select">Power: <img id="power-icon"></label>
       <select name="power-select" id="power-select" disabled onchange="loadPower()"></select>
     </p>
-    <h1>Maths</h1>
+    <h1>The Math</h1>
     <p>
       <label for="cast-time-input">Cast Time: </label>
       <input type="number" name="cast-time-input" id="cast-time-input" step="0.01" min="0" value=""></input>
