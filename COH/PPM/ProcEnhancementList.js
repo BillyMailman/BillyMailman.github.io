@@ -28,5 +28,6 @@ function loadEnhancements(){
       procContainer.append(setParagraph);
     });
   });
+  resetEnhancementSelections();
 }
 $(document).ready(loadEnhancements);
