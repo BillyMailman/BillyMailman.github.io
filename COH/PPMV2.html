@@ -5,21 +5,27 @@
     <title>CoH PPM Calculator</title>
     <link rel="stylesheet" href="../simple.css"/>
     <script type="text/javascript" src="../jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="PPM/ResetFunctions.js"></script>
     <script type="text/javascript" src="PPM/PowersetList.js"></script>
   </head>
   <body>
     <h1>Choose a power</h1>
     <p>
       <label for="category-select">Power Category: <img id="powerset-icon"></label>
-      <select name="category-select" id="category-select" disabled onchange="refreshPowersetList()"></select>
+      <select name="category-select" id="category-select" onchange="refreshPowersetList()"></select>
     </p>
     <p>
       <label for="powerset-select">Powerset: </label>
-      <select name="powerset-select" id="powerset-select" disabled onchange="refreshPowerList()"></select>
+      <select name="powerset-select" id="powerset-select" onchange="refreshPowerList()"></select>
     </p>
     <p>
       <label for="power-select">Power: <img id="power-icon"></label>
-      <select name="power-select" id="power-select" disabled onchange="loadPower()"></select>
+      <select name="power-select" id="power-select" onchange="loadPower()"></select>
+    </p>
+    <h1>Procs</h1>
+    <p class="proc" id="procs-Melee_Damage">
+      <input type="checkbox" id="Pounding_Slugfest" name="Pounding_Slugfest" value="100PPM"><label for="Pounding_Slugfest">Pounding Slugfest: Disorient Bonus</label>
+      <input type="checkbox" id="Kinetic_Combat" name="Kinetic_Combat" value="3PPM"><label for="Kinetic_Combat">Kinetic Combat: Chance for Knockdown (3PPM)</label>
     </p>
     <h1>The Math</h1>
     <p>
