@@ -5,6 +5,7 @@
     <title>CoH PPM Calculator</title>
     <link rel="stylesheet" href="../simple.css"/>
     <script type="text/javascript" src="../jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="PPM/ProcEnhancementList.js"></script>
     <script type="text/javascript" src="PPM/ResetFunctions.js"></script>
     <script type="text/javascript" src="PPM/PowersetList.js"></script>
   </head>
@@ -23,6 +24,9 @@
       <select name="power-select" id="power-select" onchange="loadPower()"></select>
     </p>
     <h1>Procs</h1>
+    <div id="proc-container">
+    </div>
+    <hr>
     <p class="proc" id="procs-Melee_Damage">
       Melee Damage:
       <input type="checkbox" id="Pounding_Slugfest" name="Pounding_Slugfest" value="100PPM"><label for="Pounding_Slugfest">Pounding Slugfest: Disorient Bonus</label>

@@ -1,0 +1,28 @@
+[
+  {
+    "name":"Melee Damage",
+    "procs":[
+      {
+        "name": "Kinetic Combat: Chance for Knockdown",
+        "rate": 3
+      },
+      {
+        "name": "Touch of Death: Negative Energy Damage",
+        "rate": 3.5
+      }
+    ]
+  },
+  {
+    "name":"Ranged Damage",
+    "procs":[
+      {
+        "name":"Tempest: Chance for Endurance Drain",
+        "rate": 3.5
+      },
+      {
+        "name":"Entropic Chaos: Chance to Heal Self",
+        "rate": 3
+      }
+    ]
+  }
+]

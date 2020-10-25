@@ -1,9 +1,7 @@
 var powerCategoryList = [];
 var powersetList = [];
 var powersList = [];
-$(document).ready(function(){
-  refreshCategoryList();
-});
+$(document).ready(refreshCategoryList);
 //Fired on initial load. Triggers the first dropdown to be populated.
 function refreshCategoryList(){
   resetEverything();
