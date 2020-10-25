@@ -17,6 +17,6 @@ function resetPowerInfo(){
   resetEnhancementSelections();
 }
 function resetEnhancementSelections(){
-$('.proc input').prop('checked', false);
-  $('.proc input').prop('disabled', true);
+$('#proc-container input').prop('checked', false);
+  $('#proc-container input').prop('disabled', true);
 }
