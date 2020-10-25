@@ -1,46 +1,22 @@
-function resetUnselectedOptions(){
-  var selectedCategoryIndex = $('#category-select').val();
-  var selectedCategory = powerCategoryList[selectedCategoryIndex];
-  if(selectedCategoryIndex === null || selectedCategory.url === null){
-    //No category. Reset everything.
+function resetEverything(){
     resetPowersetDropdown();
-    resetPowerDropdown();
-    resetEnhancementSelections();
-    resetPowerInfo();
-    return;
-  }
-  //Category selected. Check for powerset.
-  var selectedPowersetIndex = $('#powerset-select').val();
-  var selectedPowerset = powersetList[selectedPowersetIndex];
-  if(selectedPowersetIndex === null || selectedPowerset.url === null){
-    resetPowerDropdown();
-    resetEnhancementSelections();
-    resetPowerInfo();
-    return;
-  }
-  //Powerset selected is valid. Check for a power.
-  var selectedPowerIndex = $('#power-select').val();
-  var selectedPower = powersList[selectedPowerIndex];
-  if(selectedPowerIndex === null || selectedPower.url === null){
-    resetEnhancementSelections();
-    resetPowerInfo();
-    return;
-  }
 }
-
 function resetPowersetDropdown(){
   $('#powerset-select').empty();
   $('#powerset-select').prop('disabled', true);
   $('#powerset-icon').attr('src','');
+  resetPowerDropdown();
 }
 function resetPowerDropdown(){
   $('#power-select').empty();
   $('#power-select').prop('disabled', true);
+  resetPowerInfo();
+}
+function resetPowerInfo(){
+  $('#power-icon').attr('src','');
+  resetEnhancementSelections();
 }
 function resetEnhancementSelections(){
 $('.proc input').prop('checked', false);
   $('.proc input').prop('disabled', true);
-}
-function resetPowerInfo(){
-  $('#power-icon').attr('src','');
 }

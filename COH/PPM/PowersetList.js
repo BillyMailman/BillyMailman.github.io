@@ -6,7 +6,7 @@ $(document).ready(function(){
 });
 //Fired on initial load. Triggers the first dropdown to be populated.
 function refreshCategoryList(){
-  resetUnselectedOptions();
+  resetEverything();
   $('#category-select').empty();
   //Get the full powers list. This URL is hard-coded, but meh.
   $.getJSON('https://coh.tips/powers/v2/',function(data){
@@ -49,7 +49,7 @@ function refreshCategoryList(){
 }
 //This one fires when a selection is made on the first dropdown, and populates or blanks out the second.
 function refreshPowersetList(){
-  resetUnselectedOptions();
+  resetPowersetDropdown();
   var selected = $('#category-select').val();
   var category = powerCategoryList[selected];
   if(category.url === null){
@@ -77,7 +77,7 @@ function refreshPowersetList(){
 }
 //This is for the second dropdown being chosen, and loads up the last dropdown's options.
 function refreshPowerList(){
-  resetUnselectedOptions();
+  resetPowerDropdown();
   var selected = $('#powerset-select').val();
   var powerset = powersetList[selected];
   if(powerset.url === null){
@@ -99,8 +99,6 @@ function refreshPowerList(){
 }
 //And this is for when they select the actual power.
 function loadPower(){
-  resetUnselectedOptions();
-  resetEnhancementSelections();
   resetPowerInfo();
   var selected = $('#power-select').val();
   var power = powersList[selected];
@@ -115,11 +113,13 @@ function loadPower(){
   var rechargeTime = power.activate.recharge_time;
   var type = power.power_type;
   var allowedSets = power.enhancement_set_categories_allowed;
-  allowedSets.forEach((set, i) => {
-    set = set.replace(" ", "_");
-    var selector = '#procs-' + set + ">input";
-    $(selector).prop('disabled', false);
-  });
+  if(allowedSets !== null){
+    allowedSets.forEach((set, i) => {
+      set = set.replace(" ", "_");
+      var selector = '#procs-' + set + ">input";
+      $(selector).prop('disabled', false);
+    });
+  }
   $('#cast-time-input').val(castTime);
   $('#animation-time-input').val(animationTime);
   $('#recharge-time-input').val(rechargeTime);
