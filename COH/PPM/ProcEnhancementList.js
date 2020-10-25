@@ -3,7 +3,7 @@ function loadEnhancements(){
     console.log(data);
     var procContainer = $('#proc-container');
     data.forEach((type, i) => {
-      var setName = type.setName;
+      var setName = type.name;
       var setId = setName.replace(' ', '_');
       var procs = type.procs;
       var setParagraph = $('<p></p>');
