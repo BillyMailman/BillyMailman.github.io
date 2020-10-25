@@ -9,6 +9,7 @@ function loadEnhancements(){
       var setParagraph = $('<p></p>');
       setParagraph.append(setName);
       setParagraph.append(': ');
+      setParagraph.append($('<br>'))
       procs.forEach((proc, i) => {
         var procName = proc.name;
         var procId = procName.replace(' ', '_');
@@ -17,11 +18,12 @@ function loadEnhancements(){
         checkbox.prop('id', procId);
         checkbox.prop('name', procId);
         checkbox.prop('value', rate);
-        procContainer.append(checkbox);
+        setParagraph.append(checkbox);
         var label = $('<label></label>');
         label.prop('for', procId);
         label.text(procName);
-        procContainer.append(label);
+        setParagraph.append(label);
+        setParagraph.append($('<br>'))
       });
       procContainer.append(setParagraph);
     });
