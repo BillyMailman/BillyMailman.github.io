@@ -120,6 +120,7 @@ function loadPower(){
       $(selector).prop('disabled', false);
     });
   }
+  $('#type-input').val(type);
   $('#cast-time-input').val(castTime);
   $('#animation-time-input').val(animationTime);
   $('#recharge-time-input').val(rechargeTime);
