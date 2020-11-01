@@ -5,43 +5,45 @@
     <title>CoH PPM Calculator</title>
     <link rel="stylesheet" href="../simple.css"/>
     <script type="text/javascript" src="../jquery-2.2.1.min.js"></script>
-    <script type="text/javascript" src="PPM/ProcEnhancementList.js"></script>
     <script type="text/javascript" src="PPM/ResetFunctions.js"></script>
+    <script type="text/javascript" src="PPM/ProcEnhancementList.js"></script>
     <script type="text/javascript" src="PPM/PowersetList.js"></script>
+    <script type="text/javascript" src="PPM/PPMCalcs.js"></script>
   </head>
   <body>
     <h1>Choose a power</h1>
     <p>
       <label for="category-select">Power Category: <img id="powerset-icon"></label>
       <select name="category-select" id="category-select" onchange="refreshPowersetList()"></select>
-    </p>
-    <p>
+      <br/>
       <label for="powerset-select">Powerset: </label>
       <select name="powerset-select" id="powerset-select" onchange="refreshPowerList()"></select>
-    </p>
-    <p>
+      <br/>
       <label for="power-select">Power: <img id="power-icon"></label>
       <select name="power-select" id="power-select" onchange="loadPower()"></select>
     </p>
     <h1>Procs</h1>
     <div id="proc-container">
     </div>
-    <h1>The Math</h1>
+    <h1>Power Stats</h1>
     <p>
       <label for="type-input">Power Type: </label>
       <input type="text" disabled name="type-input" id="type-input" value=""></input>
-    </p>
-    <p>
+      <br/>
       <label for="cast-time-input">Cast Time: </label>
       <input type="number" disabled name="cast-time-input" id="cast-time-input"value=""></input>
-    </p>
-    <p>
+      <br/>
       <label for="animation-time-input">Animation Time: </label>
       <input type="number" disabled name="animation-time-input" id="animation-time-input" value=""></input>
-    </p>
-    <p>
+      <br/>
       <label for="recharge-time-input">Recharge Time: </label>
       <input type="number" disabled name="recharge-time-input" id="recharge-time-input" value=""></input>
+    </p>
+    <h1>Calculations</h1>
+    <p>
+      <button type="button" disabled onclick="doPPMCalcs()" id="do-calc-button">Do the math!</button>
+      <br/>
+      <textarea disabled id="output-field" style="width: 100%"></textarea>
     </p>
   </body>
 </html>

@@ -14,6 +14,7 @@ function resetPowerDropdown(){
 }
 function resetPowerInfo(){
   $('#power-icon').attr('src','');
+  $('#do-calc-button').prop('disabled', true);
   resetEnhancementSelections();
 }
 function resetEnhancementSelections(){

@@ -115,11 +115,13 @@ function loadPower(){
     allowedSets.forEach((set, i) => {
       set = set.replace(" ", "_");
       var selector = '#procs-' + set + ">input";
-      $(selector).prop('disabled', false);
+      var temp = $(selector);
+      temp.prop('disabled', false);
     });
   }
   $('#type-input').val(type);
   $('#cast-time-input').val(castTime);
   $('#animation-time-input').val(animationTime);
   $('#recharge-time-input').val(rechargeTime);
+  $('#do-calc-button').prop('disabled', false);
 }
