@@ -1,0 +1,19 @@
+.defense-list{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  padding: 5px;
+  justify-content: space-between;
+}
+.defense-list>div{
+  max-width: 450px;
+  margin: 5px;
+}
+.defense-list img{
+  float:left;
+  max-width: 25%;
+  margin: 5px;
+}
+.defense-list h3{
+  text-align: center;
+}
