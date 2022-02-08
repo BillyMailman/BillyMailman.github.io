@@ -1,0 +1,48 @@
+.resist-smashing, .defense-smashing {
+  color:slategrey;
+}
+.resist-lethal, .defense-lethal {
+  color:darkslategrey;
+}
+.resist-fire, .defense-fire {
+  color:red;
+}
+.resist-cold, .defense-cold {
+  color:deepskyblue;
+}
+.resist-energy, .defense-energy {
+  color:blue;
+}
+.resist-negative, .defense-negative {
+  color:darkviolet;
+}
+.resist-toxic, .defense-toxic {
+  color:forestgreen;
+}
+.resist-psychic, .defense-psychic {
+  color:deeppink;
+}
+.defense-ranged {
+
+}
+.defense-melee {
+
+}
+.defense-aoe {
+
+}
+
+.resist-smashing, .defense-smashing,
+.resist-lethal, .defense-lethal,
+.resist-fire, .defense-fire,
+.resist-cold, .defense-cold,
+.resist-energy, .defense-energy,
+.resist-negative, .defense-negative,
+.resist-toxic, .defense-toxic,
+.resist-psychic, .defense-psychic,
+.defense-ranged,
+.defense-melee,
+.defense-aoe {
+  text-align: end;
+  min-width: 1.4em;
+}

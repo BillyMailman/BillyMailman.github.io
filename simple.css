@@ -57,14 +57,16 @@ th{
   background-color: lightgrey;
 }
 td{
-  width:14%;
   border: 1px solid black;
   vertical-align: baseline;
 }
-td::first-line{
+.calendar td {
+  width:14%;
+}
+.calendar td::first-line{
   font-weight: bold;
 }
-tbody>tr{
+.calendar tbody>tr{
   height:3em;
 }
 table{
