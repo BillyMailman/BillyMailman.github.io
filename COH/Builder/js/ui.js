@@ -1,4 +1,4 @@
-function fillArchetypeDropdown(parsedArchetypeData){
+function fillArchetypeDropdown(parsedArchetypeData, selectionCallback){
   var dropdown = document.getElementById('archetype-dropdown');
   parsedArchetypeData.forEach((archetype) => {
     if(!archetype.player) return;
@@ -7,7 +7,11 @@ function fillArchetypeDropdown(parsedArchetypeData){
     newOption.text = archetype.display_name;
     dropdown.appendChild(newOption);
   });
-
+  dropdown.addEventListener("change", function(event){
+    var selection = event.target.value;
+    var selectedArchetype = passedArchetypeData;
+    selectionCallback(selectedArchetype);
+  });
 }
 
 export {fillArchetypeDropdown};
