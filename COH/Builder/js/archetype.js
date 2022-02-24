@@ -30,7 +30,7 @@ function fetchArchetypeData(archetypeArray){
 
 function parseArchetypeData(dataArray){
   dataArray.forEach((item, i) => {
-    parsed = {};
+    var parsed = {};
     parsed.player = !item.is_villain;
     parsed.icon = item.icon;
     parsed.display_name = item.display_name;
