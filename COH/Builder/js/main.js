@@ -1,4 +1,6 @@
 import { createCharacter } from './character.js';
 import { loadArchetypes } from './archetype.js';
+import {fillArchetypeDropdown} from './ui.js';
 
-loadArchetypes(console.log)
+
+loadArchetypes(fillArchetypeDropdown)
