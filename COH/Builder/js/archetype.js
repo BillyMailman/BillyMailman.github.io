@@ -3,7 +3,7 @@ function loadArchetypes(callback){
 }
 
 function parseArchetypes(response, callback){
-  callback(response.json())
+  response.json().then(callback);
 }
 
 export {loadArchetypes};
