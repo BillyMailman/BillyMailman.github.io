@@ -43,10 +43,12 @@ function parseArchetypeData(dataArray){
 
 function copyAttributes(source, target){
   target.attributes = {};
+  window.testsource = source;
+  window.testtarget = target;
   var list = Object.entries(source.attrib_base[0]);
   list.forEach((k) => {
     var attribute_name = k[0];
-    if (typeof attribute_name === 'string' || attribute_name instanceof String)
+    if (attribute_name !== 'damage_type' && attribute_name !== 'defense_type' && attribute_name != 'elusivity')
     {
       var newAttribute = {};
       newAttribute.base = source.attrib_base[0][attribute_name];
@@ -61,6 +63,7 @@ function copyAttributes(source, target){
     }
   });
   //TODO: damage_type, defense_type, elusivity
+
 }
 
 export {loadArchetypes};
