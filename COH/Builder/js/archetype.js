@@ -39,10 +39,18 @@ function parseArchetypeData(dataArray){
 }
 
 function copyAttributes(source, target){
+  target.attributes = {};
   var list = Object.entries(source.attrib_base[0]);
   list.forEach((v, k) => {
-    console.log(v);
-    console.log(k);
+    var newAttribute = {};
+    newAttribute.base = source.attrib_base[0][k];
+    newAttribute.max = source.attrib_max[k][49];
+    newAttribute.maxmax = source.attrib_max_max[k][49];
+    newAttribute.min = source.attrib_min[0][k];
+    newAttribute.resmin = source.attrib_resistance_min[0][k];
+    newAttribute.resmax = source.attrib_resistance_max[k][49];
+    newAttribute.strmin = source.attrib_strength_min[0][k];
+    newAttribute.strmax = source.attrib_strength_max[k][49];
   });
 
 }
