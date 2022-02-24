@@ -7,11 +7,12 @@ function fillArchetypeDropdown(parsedArchetypeData, selectionCallback){
     newOption.text = archetype.display_name;
     dropdown.appendChild(newOption);
   });
-  dropdown.addEventListener("change", function(event){
+  function test(event){
     var selection = event.target.value;
     var selectedArchetype = passedArchetypeData;
     selectionCallback(selectedArchetype);
-  });
+  }
+  dropdown.addEventListener("change", test);
 }
 
 export {fillArchetypeDropdown};
