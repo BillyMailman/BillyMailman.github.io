@@ -1,2 +1,2 @@
-import createCharacter from 'character.js';
+import createCharacter from './character.js';
 console.log(createCharacter);
