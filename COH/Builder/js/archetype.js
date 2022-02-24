@@ -35,6 +35,7 @@ function parseArchetypeData(dataArray){
     parsed.player = !item.is_villain;
     parsed.icon = item.icon;
     parsed.display_name = item.display_name;
+    parsed.name = item.name;
     copyAttributes(item, parsed);
     results.push(parsed);
   });
