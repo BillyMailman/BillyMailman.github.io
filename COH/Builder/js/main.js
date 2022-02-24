@@ -1,2 +1,4 @@
 import { createCharacter } from './character.js';
-console.log(createCharacter);
+import { loadArchetypes } from './archetype.js';
+
+loadArchetypes(console.log)
