@@ -30,7 +30,19 @@ function fetchArchetypeData(archetypeArray){
 
 function parseArchetypeData(dataArray){
   dataArray.forEach((item, i) => {
-    console.log(item);
+    parsed = {};
+    parsed.player = !item.is_villain;
+    parsed.icon = item.icon;
+    parsed.display_name = item.display_name;
+    copyAttributes(item, parsed);
+  });
+}
+
+function copyAttributes(source, target){
+  list = source.attrib_base[0];
+  list.forEach((v, k) => {
+    console.log(v);
+    console.log(k);
   });
 
 }
