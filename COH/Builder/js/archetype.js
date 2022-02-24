@@ -57,7 +57,7 @@ function copyAttributes(source, target){
       newAttribute.resmax = source.attrib_resistance_max[attribute_name][49];
       newAttribute.strmin = source.attrib_strength_min[0][attribute_name];
       newAttribute.strmax = source.attrib_strength_max[attribute_name][49];
-      attributes[attribute_name] = newAttribute;
+      target.attributes[attribute_name] = newAttribute;
     }
   });
   //TODO: damage_type, defense_type, elusivity
