@@ -75,7 +75,7 @@ function copyAttributes(source, target){
     newAttribute.strmin = source.attrib_strength_min[0]['damage_type'][type];
     newAttribute.strmax = source.attrib_strength_max['damage_type'][type][49];
     target.attributes[`${type}_dmg`] = newAttribute;
-  }
+  });
   //TODO: damage_type, defense_type, elusivity
 
 }
