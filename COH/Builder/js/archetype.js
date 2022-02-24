@@ -7,7 +7,7 @@ function loadArchetypes(callback){
 }
 
 function parseArchetypesList(json){
-  var result = []];
+  var result = [];
   json.player_archetypes.forEach((item, i) => {
     result.push(item);
   });
