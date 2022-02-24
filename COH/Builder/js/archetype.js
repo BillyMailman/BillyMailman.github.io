@@ -3,6 +3,7 @@ function loadArchetypes(callback){
   .then(response => response.json())
   .then(parseArchetypesList)
   .then(fetchArchetypeData)
+  .then(parseArchetypeData)
   .then(callback);
 }
 
@@ -23,6 +24,13 @@ function fetchArchetypeData(archetypeArray){
     fetches.push(fetch(`https://cod.uberguy.net/homecoming/archetypes/${item}.json`, {method:'get'}))
   });
   return Promise.all(fetches);
+}
+
+function parseArchetypeData(dataArray){
+  dataArray.forEach((item, i) => {
+    console.log(item);
+  });
+
 }
 
 export {loadArchetypes};
