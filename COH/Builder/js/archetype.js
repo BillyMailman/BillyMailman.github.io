@@ -44,19 +44,20 @@ function parseArchetypeData(dataArray){
 function copyAttributes(source, target){
   target.attributes = {};
   var list = Object.entries(source.attrib_base[0]);
-  list.forEach((k, v) => {
-    if (typeof k === 'string' || k instanceof String)
+  list.forEach((k) => {
+    var attribute_name = k[0];
+    if (typeof attribute_name === 'string' || attribute_name instanceof String)
     {
       var newAttribute = {};
-      newAttribute.base = source.attrib_base[0][k];
-      newAttribute.max = source.attrib_max[k][49];
-      newAttribute.maxmax = source.attrib_max_max[k][49];
-      newAttribute.min = source.attrib_min[0][k];
-      newAttribute.resmin = source.attrib_resistance_min[0][k];
-      newAttribute.resmax = source.attrib_resistance_max[k][49];
-      newAttribute.strmin = source.attrib_strength_min[0][k];
-      newAttribute.strmax = source.attrib_strength_max[k][49];
-      attributes[k] = newAttribute;
+      newAttribute.base = source.attrib_base[0][attribute_name];
+      newAttribute.max = source.attrib_max[attribute_name][49];
+      newAttribute.maxmax = source.attrib_max_max[attribute_name][49];
+      newAttribute.min = source.attrib_min[0][attribute_name];
+      newAttribute.resmin = source.attrib_resistance_min[0][attribute_name];
+      newAttribute.resmax = source.attrib_resistance_max[attribute_name][49];
+      newAttribute.strmin = source.attrib_strength_min[0][attribute_name];
+      newAttribute.strmax = source.attrib_strength_max[attribute_name][49];
+      attributes[attribute_name] = newAttribute;
     }
   });
   //TODO: damage_type, defense_type, elusivity
