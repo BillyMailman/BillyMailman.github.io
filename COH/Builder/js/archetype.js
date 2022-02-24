@@ -7,22 +7,22 @@ function loadArchetypes(callback){
 }
 
 function parseArchetypesList(json){
-  var result = new Map();
+  var result = []];
   json.player_archetypes.forEach((item, i) => {
-    result.set(item, 'player');
+    result.push(item);
   });
   json.npc_archetypes.forEach((item, i) => {
-    result.set(item, 'npc');
+    result.push(item);
   });
   return result;
 }
 
-function fetchArchetypeData(archetypeMap){
-  archetypeMap.forEach((v, k) => {
-    console.log(v);
-    console.log(k);
+function fetchArchetypeData(archetypeArray){
+  var fetches = [];
+  archetypeArray.forEach((item, i) => {
+    fetches.push(fetch(`https://cod.uberguy.net/homecoming/archetypes/${item}.json`))
   });
-  return 'done';
+  return Promise.all(fetches);
 }
 
 export {loadArchetypes};
