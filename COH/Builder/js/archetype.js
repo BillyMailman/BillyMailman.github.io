@@ -39,7 +39,7 @@ function parseArchetypeData(dataArray){
 }
 
 function copyAttributes(source, target){
-  var list = source.attrib_base[0];
+  var list = Object.entries(source.attrib_base[0]);
   list.forEach((v, k) => {
     console.log(v);
     console.log(k);
