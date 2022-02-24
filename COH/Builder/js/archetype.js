@@ -62,6 +62,20 @@ function copyAttributes(source, target){
       target.attributes[attribute_name] = newAttribute;
     }
   });
+  var damage_type_list = Object.entries(source.attrib_base[0].damage_type);
+  damage_type_list.forEach((k) => {
+    var type = k[0];
+    var newAttribute = {};
+    newAttribute.base = source.attrib_base[0]['damage_type'][type];
+    newAttribute.max = source.attrib_max['damage_type'][type][49];
+    newAttribute.maxmax = source.attrib_max_max['damage_type'][type][49];
+    newAttribute.min = source.attrib_min[0]['damage_type'][type];
+    newAttribute.resmin = source.attrib_resistance_min[0]['damage_type'][type];
+    newAttribute.resmax = source.attrib_resistance_max['damage_type'][type][49];
+    newAttribute.strmin = source.attrib_strength_min[0]['damage_type'][type];
+    newAttribute.strmax = source.attrib_strength_max['damage_type'][type][49];
+    target.attributes[`${type}_dmg`] = newAttribute;
+  }
   //TODO: damage_type, defense_type, elusivity
 
 }
