@@ -41,7 +41,7 @@ function parseArchetypeData(dataArray){
 function copyAttributes(source, target){
   target.attributes = {};
   var list = Object.entries(source.attrib_base[0]);
-  list.forEach((v, k) => {
+  list.forEach((k, v) => {
     var newAttribute = {};
     newAttribute.base = source.attrib_base[0][k];
     newAttribute.max = source.attrib_max[k][49];
