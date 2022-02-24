@@ -20,7 +20,7 @@ function parseArchetypesList(json){
 function fetchArchetypeData(archetypeArray){
   var fetches = [];
   archetypeArray.forEach((item, i) => {
-    fetches.push(fetch(`https://cod.uberguy.net/homecoming/archetypes/${item}.json`))
+    fetches.push(fetch(`https://cod.uberguy.net/homecoming/archetypes/${item}.json`, {method:'get'}))
   });
   return Promise.all(fetches);
 }
