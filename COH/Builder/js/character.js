@@ -1,4 +1,5 @@
-function createCharacter(){
-  return {};
+class Character {
+
 }
-export {createCharacter};
+
+export { Character };
