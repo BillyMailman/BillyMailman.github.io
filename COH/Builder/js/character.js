@@ -3,7 +3,7 @@ class Character {
     this._archetype = null;
   }
   set archetype(at){
-    if(canChangeArchetype()){
+    if(this.canChangeArchetype()){
       this._archetype = at;
     }
   }
@@ -15,8 +15,6 @@ class Character {
     //No changing after powers chosen!
     return true;
   }
-
-
 }
 
 export { Character };
