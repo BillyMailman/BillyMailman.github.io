@@ -68,7 +68,6 @@ function copyAttributes(source, target){
     var type_list = Object.entries(source.attrib_base[0][field_name]);
     type_list.forEach((k) => {
       var type = k[0];
-      var newName = type.substr(0, type.indexOf('_'));
       var newAttribute = {};
       newAttribute.base = source.attrib_base[0][field_name][type];
       newAttribute.max = source.attrib_max[field_name][type][49];
@@ -78,7 +77,10 @@ function copyAttributes(source, target){
       newAttribute.resmax = source.attrib_resistance_max[field_name][type][49];
       newAttribute.strmin = source.attrib_strength_min[0][field_name][type];
       newAttribute.strmax = source.attrib_strength_max[field_name][type][49];
-      target.attributes[`${newName}${suffix}`] = newAttribute;
+      if(type.includes('_')){
+        type = type.substr(0, type.indexOf('_'));
+      }
+      target.attributes[`${type}${suffix}`] = newAttribute;
     });
   });
 
