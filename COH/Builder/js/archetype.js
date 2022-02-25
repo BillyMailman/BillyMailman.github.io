@@ -84,9 +84,6 @@ function copyAttributes(source, target){
     });
   });
 
-
-  //TODO: damage_type, defense_type, elusivity
-
 }
 
 export {loadArchetypes};
