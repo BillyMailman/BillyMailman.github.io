@@ -21,9 +21,7 @@ function parseArchetypesList(json){
 function fetchArchetypeData(archetypeArray){
   var fetches = [];
   archetypeArray.forEach((item, i) => {
-    if(item != 'blaster'){
-      fetches.push(fetch(`https://cod.uberguy.net/homecoming/archetypes/${item}.json`, {method:'get'}).then(response => response.json()))
-    }
+    fetches.push(fetch(`https://cod.uberguy.net/homecoming/archetypes/${item}.json`, {method:'get'}).then(response => response.json()))
   });
   return Promise.all(fetches);
 }
