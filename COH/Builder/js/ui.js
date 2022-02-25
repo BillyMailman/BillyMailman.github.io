@@ -17,4 +17,8 @@ function fillArchetypeDropdown(parsedArchetypeData, selectionCallback){
   });
 }
 
-export {fillArchetypeDropdown};
+function setActiveCharacter(character){
+  window.activeCharacter = character;
+}
+
+export {fillArchetypeDropdown, setActiveCharacter};
