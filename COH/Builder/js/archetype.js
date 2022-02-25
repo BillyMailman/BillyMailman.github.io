@@ -34,6 +34,8 @@ function parseArchetypeData(dataArray){
     parsed.icon = item.icon;
     parsed.display_name = item.display_name;
     parsed.name = item.name;
+    parsed.primaries = item.primary_category;
+    parsed.secondaries = item.secondary_category;
     copyAttributes(item, parsed);
     results.push(parsed);
   });
