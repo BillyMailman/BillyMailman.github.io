@@ -1,6 +1,7 @@
+import { getData } from './fetch.js';
+
 function loadArchetypes(callback){
-  fetch('https://cod.uberguy.net/homecoming/archetypes/index.json', {method:'get'})
-  .then(response => response.json())
+  getData('archetypes', 'index')
   .then(parseArchetypesList)
   .then(fetchArchetypeData)
   .then(parseArchetypeData)
@@ -21,7 +22,7 @@ function parseArchetypesList(json){
 function fetchArchetypeData(archetypeArray){
   var fetches = [];
   archetypeArray.forEach((item, i) => {
-    fetches.push(fetch(`https://cod.uberguy.net/homecoming/archetypes/${item}.json`, {method:'get'}).then(response => response.json()))
+    fetches.push(getData('archetypes', item))
   });
   return Promise.all(fetches);
 }
