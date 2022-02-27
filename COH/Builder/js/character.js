@@ -21,7 +21,7 @@ class Character {
       return null;
     }
     if(value === "base" || value === "maxmax" || value === "resmin" || value === "resmax" || value === "strmin" || value === "strmax"){
-      return _archetype.attributes[attribute_name][value];
+      return this_archetype.attributes[attribute_name][value];
     }
     if(value === "cur"){
       var totalWithBuffs = this.getAttribute(attribute_name, 'base') + this.getTotalBuffs(attribute_name, 'cur');
