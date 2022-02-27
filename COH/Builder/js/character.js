@@ -24,13 +24,13 @@ class Character {
       return _archetype.attributes[attribute_name][value];
     }
     if(value === "cur"){
-      var totalWithBuffs = getAttribute(attribute_name, 'base') + this.getTotalBuffs(attribute_name, 'cur');
+      var totalWithBuffs = this.getAttribute(attribute_name, 'base') + this.getTotalBuffs(attribute_name, 'cur');
       var max = this.getAttribute(attribute_name, 'max');
       var min = this.getAttribute(attribute_name, 'min');
       return Math.max(Math.min(totalWithBuffs, max), min);
     }
     if(value === "max"){
-      var maxWithBuffs = _archetype.attributes[attribute_name]['max'] + this.getTotalBuffs(attribute_name, 'max');
+      var maxWithBuffs = this._archetype.attributes[attribute_name]['max'] + this.getTotalBuffs(attribute_name, 'max');
       var maxmax = this.getAttribute(attribute_name, 'maxmax');
       return Math.min(maxWithBuffs, maxmax);
     }
