@@ -20,7 +20,7 @@ class Character {
     if(this._archetype === null){
       return null;
     }
-    if(value === "base" || value === "maxmax" || value === "resmin" || value === "resmax" || value === "strmin" || value === "strmax"){
+    if(value === "base" || value === "maxmax" || value === "min" || value === "resmin" || value === "resmax" || value === "strmin" || value === "strmax"){
       return this._archetype.attributes[attribute_name][value];
     }
     if(value === "cur"){
