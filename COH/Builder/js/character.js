@@ -50,10 +50,12 @@ class Character {
   }
 
   addEffect(newEffect){
-    var key = `${effect.source}-${effect.index}`;
+    var source = effect.source;
+    var index = effect.index;
+    var key = `${source}-${index}`;
     this._effects.set(key, effect);
   }
-  
+
   removeEffect(effect){
     var key = `${effect.source}-${effect.index}`;
     this._effects.delete(key);
