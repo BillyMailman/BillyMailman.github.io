@@ -5,6 +5,7 @@ class Character {
   set archetype(at){
     if(this.canChangeArchetype()){
       this._archetype = at;
+      this._effects = new Map();
     }
   }
   get archetype(){
@@ -48,9 +49,24 @@ class Character {
     }
   }
 
+  addEffect(newEffect){
+    var key = `${effect.source}-${effect.index}`;
+    this._effects.set(key, effect);
+  }
+  removeEffect(effect){
+    var key = `${effect.source}-${effect.index}`;
+    this._effects.delete(key);
+  }
+
   //type is 'cur', 'buff', 'res', or 'str'.
   getTotalBuffs(attribute_name, type){
-    return 0;
+    var total = 0;
+    for(var [key, effect] of this._effects){
+      if(effect.attribute === attribute_name && effect.type === type){
+        total += effect.value
+      }
+    }
+    return total;
   }
 }
 
