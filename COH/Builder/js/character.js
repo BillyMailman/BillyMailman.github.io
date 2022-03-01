@@ -65,7 +65,7 @@ class Character {
   getTotalBuffs(attribute_name, type){
     var total = 0;
     for(var [key, effect] of this._effects){
-      if(effect.attribute === attribute_name && effect.type === type){
+      if(effect.attribute === attribute_name && effect.aspect === type){
         total += effect.value
       }
     }
