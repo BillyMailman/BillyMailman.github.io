@@ -53,6 +53,7 @@ class Character {
     var key = `${effect.source}-${effect.index}`;
     this._effects.set(key, effect);
   }
+  
   removeEffect(effect){
     var key = `${effect.source}-${effect.index}`;
     this._effects.delete(key);

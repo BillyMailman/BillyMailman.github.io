@@ -31,3 +31,5 @@ class Effect {
     return this._value;
   }
 }
+
+export { Effect };
