@@ -4,7 +4,11 @@ import { fillArchetypeDropdown, setActiveCharacter } from './ui.js';
 import {Effect} from './effect.js';
 
 var character = new Character();
-window.effect = Effect;
 
 loadArchetypes(data => fillArchetypeDropdown(data, at => character.archetype = at));
 setActiveCharacter(character);
+
+
+//Collected hacks for manual debugging while developing.
+window.Effect = Effect;
+window.Character = Character;
