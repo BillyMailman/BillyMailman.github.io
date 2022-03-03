@@ -47,6 +47,34 @@ class Character {
       var strmin = this.getAttribute(attribute_name, 'strmin');
       return Math.max(Math.min(buffValue, strmax), strmin);
     }
+    if(aspect === "resres"){
+      //Undebuffed resistance resists resistance debuffs!
+      var buffValue = this.getDebufflessResistanceBuffs(attribute_name);
+      var resmax = this.getAttribute(attribute_name, 'resmax');
+      var resmin = this.getAttribute(attribute_name, 'resmin');
+      return Math.max(Math.min(buffValue, resmax), resmin);
+    }
+  }
+
+  getDebufflessResistanceBuffs(attribute_name){
+    var total = 0;
+    for(var [key, effect] of this._effects){
+      if(effect.attribute === attribute_name && effect.aspect === "res" && value >= 0){
+        total += effect.value
+      }
+    }
+    return total;
+  }
+
+  //type is 'cur', 'buff', 'res', or 'str'.
+  getTotalBuffs(attribute_name, type){
+    var total = 0;
+    for(var [key, effect] of this._effects){
+      if(effect.attribute === attribute_name && effect.aspect === type){
+        total += effect.value
+      }
+    }
+    return total;
   }
 
   addEffect(newEffect){
@@ -59,17 +87,6 @@ class Character {
   removeEffect(effect){
     var key = `${effect.source}-${effect.index}`;
     this._effects.delete(key);
-  }
-
-  //type is 'cur', 'buff', 'res', or 'str'.
-  getTotalBuffs(attribute_name, type){
-    var total = 0;
-    for(var [key, effect] of this._effects){
-      if(effect.attribute === attribute_name && effect.aspect === type){
-        total += effect.value
-      }
-    }
-    return total;
   }
 }
 
