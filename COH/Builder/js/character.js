@@ -17,31 +17,31 @@ class Character {
     return true;
   }
 
-  getAttribute(attribute_name, value){
+  getAttribute(attribute_name, aspect){
     if(this._archetype === null){
       return null;
     }
-    if(value === "base" || value === "maxmax" || value === "min" || value === "resmin" || value === "resmax" || value === "strmin" || value === "strmax"){
-      return this._archetype.attributes[attribute_name][value];
+    if(aspect === "base" || aspect === "maxmax" || aspect === "min" || aspect === "resmin" || aspect === "resmax" || aspect === "strmin" || aspect === "strmax"){
+      return this._archetype.attributes[attribute_name][aspect];
     }
-    if(value === "cur"){
+    if(aspect === "cur"){
       var totalWithBuffs = this.getAttribute(attribute_name, 'base') + this.getTotalBuffs(attribute_name, 'cur');
       var max = this.getAttribute(attribute_name, 'max');
       var min = this.getAttribute(attribute_name, 'min');
       return Math.max(Math.min(totalWithBuffs, max), min);
     }
-    if(value === "max"){
+    if(aspect === "max"){
       var maxWithBuffs = this._archetype.attributes[attribute_name]['max'] + this.getTotalBuffs(attribute_name, 'max');
       var maxmax = this.getAttribute(attribute_name, 'maxmax');
       return Math.min(maxWithBuffs, maxmax);
     }
-    if(value === "res"){
+    if(aspect === "res"){
       var buffValue = this.getTotalBuffs(attribute_name, 'res');
       var resmax = this.getAttribute(attribute_name, 'resmax');
       var resmin = this.getAttribute(attribute_name, 'resmin');
       return Math.max(Math.min(buffValue, resmax), resmin);
     }
-    if(value === "str"){
+    if(aspect === "str"){
       var buffValue = this.getTotalBuffs(attribute_name, 'str');
       var strmax = this.getAttribute(attribute_name, 'strmax');
       var strmin = this.getAttribute(attribute_name, 'strmin');
