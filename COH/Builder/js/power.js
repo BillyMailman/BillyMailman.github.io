@@ -7,6 +7,9 @@ class Power {
   get accuracy(){
     return this._accuracy;
   }
+  get display_name(){
+    return this._display_name;
+  }
 }
 
 function loadPower(power_fullname, callback){
@@ -18,6 +21,8 @@ function loadPower(power_fullname, callback){
 function parsePowerData(powerJson){
   var power = new Power();
   power._accuracy = powerJson.accuracy;
+  power._display_name = powerJson.display_name;
+  
   return power;
 }
 
