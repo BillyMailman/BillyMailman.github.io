@@ -48,13 +48,38 @@ function parsePowerData(powerJson){
   power._available_level = powerJson.available_level;
   power.effects = [];
   powerJson.effects.forEach((effectJson) => {
-    power.effects.push(createEffect(effectJson));
+    power.effects.push(createEffects(effectJson, false));
+  });
+  powerJson.activation_effects.forEach((effectJson) => {
+    power.effects.push(createEffects(effectJson, true));
   });
   return power;
 }
 
-function createEffect(effectJson){
-  return {};
+function createEffects(effectJson, isActivation){
+  var effects = [];
+  //TODO: Class?
+  //TODO: Child effects
+  var baseEffect = {};
+  baseEffect.chance = effectJson.chance;
+  baseEffect.tags = effectJson.tags;
+  baseEffect.isActivationEffect = isActivation;
+  effectJson.templates.forEach((templateJson) => {
+    var effect = {...baseEffect};
+    effect.attribs = templateJson.attribs;
+    effect.type = templateJson.type;
+    effect.aspect = templateJson.aspect;
+    effect.target = templateJson.target;
+    effect.scale = templateJson.scale;
+    effect.table = templateJson.table;
+    effect.magnitude = templateJson.magnitude;
+    effect.stack = templateJson.stack;
+    effect.stack_limit = templateJson.stack_limit;
+    effect.flags = templateJson.flags;
+    effects.push(effect);
+  });
+
+  return effects;
 }
 
 
