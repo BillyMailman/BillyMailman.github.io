@@ -39,9 +39,12 @@ function parseArchetypeData(dataArray){
     parsed.secondaries = item.secondary_category;
     copyAttributes(item, parsed);
     parsed.tables = new Map();
-    item.named_tables.forEach((k, v) => {
-      parsed.tables.set(v.name, v.values[49]);
-    });
+    for(name in item.named_tables){
+      if (item.named_tables.hasOwnProperty(name)) {
+        var prop = item.named_tables[name]
+        parsed.tables.set(prop.name, prop.values[49]);
+      }
+    }
     results.push(parsed);
   });
   return results;
