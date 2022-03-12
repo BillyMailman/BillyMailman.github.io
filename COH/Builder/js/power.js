@@ -69,10 +69,10 @@ function parsePowerData(powerJson){
   power._available_level = powerJson.available_level;
   power._effects = [];
   powerJson.effects.forEach((effectJson) => {
-    power._effects.push(createEffects(effectJson, false));
+    power._effects = power._effects.concat(createEffects(effectJson, false));
   });
   powerJson.activation_effects.forEach((effectJson) => {
-    power._effects.push(createEffects(effectJson, true));
+    power._effects = power._effects.concat(createEffects(effectJson, true));
   });
   return power;
 }
