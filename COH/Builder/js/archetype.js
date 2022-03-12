@@ -38,6 +38,10 @@ function parseArchetypeData(dataArray){
     parsed.primaries = item.primary_category;
     parsed.secondaries = item.secondary_category;
     copyAttributes(item, parsed);
+    parsed.tables = new Map();
+    item.namedTables.forEach((k, v) => {
+      parsed.tables.set(v.name, v.values[49]);
+    });
     results.push(parsed);
   });
   return results;

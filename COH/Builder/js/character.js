@@ -17,6 +17,13 @@ class Character {
     return true;
   }
 
+  getTableValue(name){
+    if(this._archetype === null){
+      return null;
+    }
+    return this._archetype.tables.get(name);
+  }
+
   getAttribute(attribute_name, aspect){
     if(this._archetype === null){
       return null;

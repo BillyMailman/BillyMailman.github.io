@@ -1,4 +1,5 @@
 import { getData } from './fetch.js';
+import { Effect } from './effect.js';
 
 class Power {
   get accuracy(){
@@ -6,6 +7,26 @@ class Power {
   }
   get display_name(){
     return this._display_name;
+  }
+  //TODO: More getters for display in UI.
+
+  buildEffects(character, boosts){
+    this._effects.forEach((effect) => {
+      effect.attribs.forEach((attrib) => {
+        var str = character.getAttribute(attrib, 'str');
+        var magnitude;
+        if(effect.type === "Magnitude"){
+          magnitude = str * effect.scale * character.getTableValue(effect.table);
+        } else {
+          magnitude = effect.magnitude;
+        }
+        //TODO: Duration
+        //TODO: Resistance
+        //TODO: Self/Target?
+        //TODO: Boosts
+      });
+    });
+
   }
 }
 
@@ -46,12 +67,12 @@ function parsePowerData(powerJson){
   power._attrib_cache = powerJson.attrib_cache;
   power._powerset = powerJson.powerset;
   power._available_level = powerJson.available_level;
-  power.effects = [];
+  power._effects = [];
   powerJson.effects.forEach((effectJson) => {
-    power.effects.push(createEffects(effectJson, false));
+    power._effects.push(createEffects(effectJson, false));
   });
   powerJson.activation_effects.forEach((effectJson) => {
-    power.effects.push(createEffects(effectJson, true));
+    power._effects.push(createEffects(effectJson, true));
   });
   return power;
 }
