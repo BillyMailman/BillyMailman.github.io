@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Storm Blast Internals</title>
+    <link rel="stylesheet" href="../simple.css"/>
+    <link rel="stylesheet" href="coh.css"/>
+  </head>
+  <body>
+    <h1>How Storm Blast (Storm Cell, Category Five, etc.) works</h1>
+    <p>Note: All data is based on the Blaster versions.</p>
+    <h2>Storm Cell</h2>
+    <p>
+      The Storm Cell power itself summons the Storm Cell pet, which will follow the player around (it has bad speed, but decent jump height) for 60s.
+      By default, the main thing it does, is tag enemies inside it as being in the Storm Cell, slow them slightly, and debuff tohit a little.
+      This is done by a 25' PBAoE auto power on the pet, which will hit the closest 16 enemies in range, every 0.5s.
+      The slow lasts 2s, but the tagging effect persists for up to 3s, so enemies are still considered 'in' the Storm Cell for a brief period after they leave.
+      None of this is enhanceable in any way.
+    </p>
+    <h3>High Winds</h3>
+    <p>
+      Any given Storm Blast power will have some chance to grant High Winds to your Storm Cell, assuming it's already out.
+      This gives the Storm Cell pet a much stronger slow effect than normal.
+    </p>
+    <h3>Lightning</h3>
+    <p>
+      There are three different lightning effects that your powers can grant to your Storm Cell.
+      Note that all powers are set up such that they can only grant one of the lightning effects at a time.
+      The table below accounts for this, calculating the actual chance of a given lightning effect being granted.
+      <ul>
+        <li>Focused, a Single-Target attack on the nearest enemy, which deals energy damage, knocks slightly, and drains endurance.</li>
+        <li>Split, which hits two targets, but deals half the damage/drain of Focused (same knock).</li>
+        <li>Spread, which hits four targets, for 1/4 the damage of Focused (but again, still the same knock).</li>
+      </ul>
+      All three tag their target (if they hit) for 4/3/2 seconds, respectively.
+      An enemy tagged by one of the Storm Cell lightning attacks, isn't a valid target for them until the tag expires.
+      Thus, an enemy hit by the Focused lightning, will be skipped over for future lightning attacks, for the following 4s.
+      Also, note that all three attacks will get Scourge if you're a Corruptor, and that all three powers will only fire once per time your powers give them to the pet.
+    </p>
+    <h3>Being in a Storm Cell</h3>
+    <p>
+      Gust deals some extra damage to targets that are marked as being inside a Storm Cell.
+      The extra damage benefits from enhancements, but does not add to Scourge.
+      Chain Lightning does extra endurance drain , Hailstones has a higher chance for knockdown (50% instead of 25%),
+      Jet Stream does knockdown instead of repel, Direct Strike adds a chance for Stun (50% if quick, 100% if slow), and Cloudburst adds an 8s slow/-tohit effect.
+    </p>
+    <h2>Category Five</h2>
+    <p>
+      The core power summons a pair of non-moving pets.
+      The first one sits around for 25s, hitting a 30' radius around itself with a power that does a small amount of damage and knocks things back, dealing more knock if things aren't in the center.
+      It also fires an Avoid effect on anything in the weaker eye of the storm, to try to convince enemies to run out into the stronger outer radius.
+      The 'eye' area is an 8' radius.
+    </p>
+    <p>
+      The second pet lasts 30s, deals cold damage to things inside, slows them down, and also tags them as being inside a Storm Cell.
+      This second pet is also the one that receives the Category Five Lightning - another chance on each of your Storm Blast attacks to grant the Category Five pet a lightning attack.
+      This lightning attack is similar to Storm Cell's lightning attacks, though its damage is along the lines of Focused, but it hits five targets at a time, and includes a recovery debuff.
+      It also cannot hit the same target more than once every 5s, but the tag used for this is separate from the one used by Storm Cell's lightning attacks, so both can strike the same thing at the same time.
+    </p>
+    <h2>Intensify</h2>
+    <p>
+      Firing off the Intensify power increases the chances of the various effects that grant powers to pets, for 10s.
+      In the big table below, the Intensify chances are listed second.
+      If only one number is listed, then Intensify doesn't affect the chance.
+    </p>
+    <h2>The Big Table</h2>
+    <p>
+      Below are the chances of each Storm Blast power granting the various bonuses to the pets.
+      Note that all chances are checked once per activation of the power, regardless of targets hit.
+      This means that the AoE powers don't check more than once, but also means that the powers have a chance to boost your pets, even if you miss the attack.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Power</th>
+          <th rowspan="2">High Winds</th>
+          <th colspan="3">Storm Cell Lightning</th>
+          <th rowspan="2">Category Five Lightning</th>
+        </tr>
+        <tr>
+          <th>Focused</th>
+          <th>Split</th>
+          <th>Spread</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gust</td>
+          <td class="defense-ranged"><span>20</span> / <span>40</span></td>
+          <td class="defense-ranged"><span>5</span> / <span>10</span></td>
+          <td class="defense-ranged"><span>10</span> / <span>20</span></td>
+          <td class="defense-ranged"><span>5</span> / <span>10</span></td>
+          <td class="defense-ranged"><span>20</span> / <span>40</span></td>
+        </tr>
+        <tr>
+          <td>Hailstones</td>
+          <td class="defense-ranged"><span>40</span> / <span>60</span></td>
+          <td class="defense-ranged"><span>10</span> / <span>15</span></td>
+          <td class="defense-ranged"><span>20</span> / <span>30</span></td>
+          <td class="defense-ranged"><span>10</span> / <span>15</span></td>
+          <td class="defense-ranged"><span>40</span> / <span>60</span></td>
+        </tr>
+        <tr>
+          <td>Jet Stream</td>
+          <td class="defense-ranged"><span>40</span> / <span>60</span></td>
+          <td class="defense-ranged"><span>10</span> / <span>15</span></td>
+          <td class="defense-ranged"><span>20</span> / <span>30</span></td>
+          <td class="defense-ranged"><span>10</span> / <span>15</span></td>
+          <td class="defense-ranged"><span>40</span> / <span>60</span></td>
+        </tr>
+        <tr>
+          <td>Storm Cell</td>
+          <td class="defense-ranged"><span>100</span> / <span>100</span></td>
+          <td class="defense-ranged"><span>25</span> / <span>25</span></td>
+          <td class="defense-ranged"><span>50</span> / <span>50</span></td>
+          <td class="defense-ranged"><span>25</span> / <span>25</span></td>
+          <td class="defense-ranged"><span>70</span> / <span>90</span></td>
+        </tr>
+        <tr>
+          <td>Direct Strike (Slow)</td>
+          <td class="defense-ranged"><span>80</span> / <span>100</span></td>
+          <td class="defense-ranged"><span>20</span> / <span>25</span></td>
+          <td class="defense-ranged"><span>40</span> / <span>50</span></td>
+          <td class="defense-ranged"><span>20</span> / <span>25</span></td>
+          <td class="defense-ranged"><span>80</span> / <span>100</span></td>
+        </tr>
+        <tr>
+          <td>Direct Strike (Fast)</td>
+          <td class="defense-ranged"><span>60</span> / <span>80</span></td>
+          <td class="defense-ranged"><span>15</span> / <span>20</span></td>
+          <td class="defense-ranged"><span>30</span> / <span>40</span></td>
+          <td class="defense-ranged"><span>15</span> / <span>20</span></td>
+          <td class="defense-ranged"><span>60</span> / <span>80</span></td>
+        </tr>
+        <tr>
+          <td>Chain Lightning</td>
+          <td class="defense-ranged"><span>60</span> / <span>80</span></td>
+          <td class="defense-ranged"><span>15</span> / <span>20</span></td>
+          <td class="defense-ranged"><span>30</span> / <span>40</span></td>
+          <td class="defense-ranged"><span>15</span> / <span>20</span></td>
+          <td class="defense-ranged"><span>60</span> / <span>80</span></td>
+        </tr>
+        <tr>
+          <td>Cloudburst</td>
+          <td class="defense-ranged"><span>60</span> / <span>80</span></td>
+          <td class="defense-ranged"><span>15</span> / <span>20</span></td>
+          <td class="defense-ranged"><span>30</span> / <span>40</span></td>
+          <td class="defense-ranged"><span>15</span> / <span>20</span></td>
+          <td class="defense-ranged"><span>60</span> / <span>80</span></td>
+        </tr>
+        <tr>
+          <td>Category Five</td>
+          <td class="defense-ranged"><span>70</span> / <span>90</span></td>
+          <td class="defense-ranged"><span>17.5</span> / <span>22.5</span></td>
+          <td class="defense-ranged"><span>35</span> / <span>45</span></td>
+          <td class="defense-ranged"><span>17.5</span> / <span>22.5</span></td>
+          <td class="defense-ranged"><span>100</span> / <span>100</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>What the Table Means</h2>
+    <p>
+      The short version is that every power (except Intensify) has a base chance.
+      This is the chance for each of the three main effects (High Winds, Storm Cell Lightning, Category Five Lightning) to go off, and they each check separately.
+      The chance is the same for all three, with two exception - Storm Cell itself always grants both High Winds and Storm Cell Lightning, and Category Five itself always grants Category Five Lightning.
+      The base chance goes up by 20% if Intensify is used.
+      And lastly, if Storm Cell Lightning is triggered, it will be Focused a quarter of the time, Split half the time, and Spread the other quarter.
+    </p>
+  </body>
+</html>
