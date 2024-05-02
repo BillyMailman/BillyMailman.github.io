@@ -1,25 +1,25 @@
-.resist-smashing, .defense-smashing {
+.resist-smashing, .defense-smashing, .damage-smashing {
   color:slategrey;
 }
-.resist-lethal, .defense-lethal {
+.resist-lethal, .defense-lethal .damage-lethal {
   color:darkslategrey;
 }
-.resist-fire, .defense-fire {
+.resist-fire, .defense-fire, .damage-fire {
   color:red;
 }
-.resist-cold, .defense-cold {
+.resist-cold, .defense-cold, .damage-cold {
   color:deepskyblue;
 }
-.resist-energy, .defense-energy {
+.resist-energy, .defense-energy, .damage-energy {
   color:blue;
 }
-.resist-negative, .defense-negative {
+.resist-negative, .defense-negative, .damage-negative {
   color:darkviolet;
 }
-.resist-toxic, .defense-toxic {
+.resist-toxic, .defense-toxic, .damage-toxic {
   color:forestgreen;
 }
-.resist-psychic, .defense-psychic {
+.resist-psychic, .defense-psychic, .damage-psychic {
   color:deeppink;
 }
 .defense-ranged {
